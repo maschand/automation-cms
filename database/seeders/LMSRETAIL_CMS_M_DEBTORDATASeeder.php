@@ -160,7 +160,16 @@ class LMSRETAIL_CMS_M_DEBTORDATASeeder extends Seeder
 
         $current_date = date('dmy');
 
-        for ($i = 0; $i < 1; $i++) {
+        $this->command->info("Started Automation for Seeding data CMS!");
+
+        for ($i = 0; $i < 50; $i++) {
+
+            $startTime = microtime(true);
+
+            $no = $i + 1;
+
+            $this->command->info("🤖 Initializing data synthesis: Entry {$no} | Optimizing parameters... 🚀");
+
             // DATA DEBITUR
             $randomIndex = rand(0, count($this->dataAddress) - 1);
             $address = $this->dataAddress[$randomIndex];
@@ -172,8 +181,6 @@ class LMSRETAIL_CMS_M_DEBTORDATASeeder extends Seeder
             $ADDRESS = $faker->address;
             $LOAN_ACCOUNT_NUMBER = '20000000' . $faker->unique()->numberBetween(1000, 9999);
 
-            var_dump($CIF);
-
             // DATA KREDIT
             $randomSchema = rand(0, count($this->dataSchema) - 1);
             $COLLATERALID = str_pad(substr($REGION, -4), 4, '0', STR_PAD_LEFT) . $current_date . str_pad(substr($CIF, -4), 4, '0', STR_PAD_LEFT) . str_pad(substr($LOAN_ACCOUNT_NUMBER, -4), 4, '0', STR_PAD_LEFT);
@@ -181,13 +188,12 @@ class LMSRETAIL_CMS_M_DEBTORDATASeeder extends Seeder
             $SUBSCHEMA = $this->dataSubSchema[$randomSchema];
             $COMPANY = $faker->company;
 
-            var_dump($COLLATERALID);
-
             // DATA AGUNAN
             $indexAgunan = rand(0, count($this->dataJenisAgunan) - 1);
             $JENISAGUNAN = $this->dataJenisAgunan[$indexAgunan];
             $SUBJENISAGUNAN = $this->getSubJenisAgunan($JENISAGUNAN['JENIS_BENTUK_AGUNAN']);
 
+            $this->command->info("🤖 Created with CIF {$CIF} | Optimizing parameters... 🚀");
 
             DB::table('LMSRETAIL_CMS_M_DEBTORDATA')->insert([
                 'CIF' => $CIF,
@@ -284,8 +290,8 @@ class LMSRETAIL_CMS_M_DEBTORDATASeeder extends Seeder
             switch ($JENISAGUNAN['JENIS_BENTUK_AGUNAN']) {
                 case 1:
                     $BUILDING_AREA = $faker->numberBetween(50, 1000);
-                    $NEW_REPRODUCTION_COST_VALUE = $faker->numberBetween(1000000, 100000000);
-                    $NEW_REPRODUCTION_COST = $faker->numberBetween(1000000, 100000000);
+                    $NEW_REPRODUCTION_COST_VALUE = $faker->numberBetween(1000000, 10000000);
+                    $NEW_REPRODUCTION_COST = $faker->numberBetween(1000000, 10000000);
                     $ADD_EFFECTIVE_AGE = $faker->randomFloat(2, 0, 10);
                     $EFFECTIVE_AGE = $faker->randomFloat(2, 0, 10);
                     $FLOOR_INDEX = $faker->randomFloat(2, 0, 10);
@@ -296,7 +302,7 @@ class LMSRETAIL_CMS_M_DEBTORDATASeeder extends Seeder
                     $MARKET_VALUE_OF_BUILDING_PER_M2 = $BUILDING_VALUE_PER_M2 - ($BUILDING_VALUE_PER_M2 * $DEPRECIATION);
                     $MARKET_AREA_VALUE_OF_BUILDING = $MARKET_VALUE_OF_BUILDING_PER_M2 * $BUILDING_AREA;
 
-                    DB::table('LMSRETAIL_CMS_M_LANDBUILDINGCOLLATERALDETAILS')->insert([
+                    DB::table('LMSRETAIL_CMS_M_LAND_BUILDINGCOLLATERALDETAILS')->insert([
                         'GARAGE' => $faker->numberBetween(1, 3),
                         'LIVING_ROOM' => $faker->numberBetween(1, 3),
                         'KITCHEN' => $faker->numberBetween(1, 3),
@@ -769,7 +775,7 @@ class LMSRETAIL_CMS_M_DEBTORDATASeeder extends Seeder
                         'ID_COMPARISON_1' => null,
                         'ID_COMPARISON_2' => null,
                         'ID_COMPARISON_3' => null,
-                        'TYPE_OF_SHIP' => $faker->randomElement(['Cargo', 'Fishing Vessel', 'Tanker', 'Passenger', 'Yacht']),
+                        'TYPE_OF_SHIP' => $faker->numberBetween(1, 21),
                         'SHIP_NAME' => $MODELTYPE . ' Ship',
                         'OWNERS_NAME' => $faker->name,
                         'BRAND_OF_PROPULSION_ENGINE' => $BRAND,
@@ -782,7 +788,7 @@ class LMSRETAIL_CMS_M_DEBTORDATASeeder extends Seeder
                         'GROSS_TONNAGE' => $faker->numberBetween(100, 100000),
                         'NET_TONNAGE' => $faker->numberBetween(50, 80000),
                         'HULL_IDENTIFICATION_NUMBER' => $faker->bothify('HULL-#######'),
-                        'CITY_OF_MANUFACTURE' => $faker->city,
+                        'CITY_OF_MANUFACTURE' => $address['CITY'],
                         'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
                         'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
                         'SHIPS_FLAG_COUNTRY' => $faker->country,
@@ -964,6 +970,112 @@ class LMSRETAIL_CMS_M_DEBTORDATASeeder extends Seeder
                 'MESSAGE' => $faker->sentence,
                 'IS_DELETE' => 'N',
             ]);
+
+
+            $GENERALAPRAISALID = $faker->unique()->numerify('GENAPR####');
+
+            $KJPP = DB::table('LMSRETAIL_CMS_M_PERUSAHAANREKANAN')->get()->random();
+            $SURVEYOR1 = DB::table('LMSRETAIL_CMS_M_PERSONILPERUSAHAANREKANAN')
+                ->where('ID_PERUSAHAAN', $KJPP->id)
+                ->get()
+                ->random();
+            $SURVEYOR2 = DB::table('LMSRETAIL_CMS_M_PERSONILPERUSAHAANREKANAN')
+                ->where('ID_PERUSAHAAN', $KJPP->id)
+                ->get()
+                ->random();
+
+            // Taksasi General
+            DB::table('LMSRETAIL_CMS_M_GENERALAPPRAISALINFORMATION')->insert([
+                'MAPID' => $MAPID,
+                'VALUATION_PURPOSE' => $faker->numberBetween(1, 2),
+                'VALUATION_APPROACH' => $faker->numberBetween(1, 3),
+                'VALUER_SURVEYOR_NAME_1' => substr($SURVEYOR1->pemimpin_rekan_atau_rekan, 0, 50),
+                'SURVEYOR_POSITION_1' => 'Pemimpin Rekan atau Rekan',
+                'VALUER_SURVEYOR_NAME_2' => substr($SURVEYOR2->pemimpin_rekan_atau_rekan, 0, 50),
+                'SURVEYOR_POSITION_2' => 'Pemimpin Rekan atau Rekan',
+                'KJPP_NAME' => substr($KJPP->nama_perusahaan, 0, 50),
+                'KJPP_ADDRESS' => $faker->address,
+                'VALUATION_DATE' => $faker->date(),
+                'VALUATION_YEAR' => $faker->date(),
+                'VALUATION_REVIEW_EXPIRY_DATE' => $faker->date(),
+                'KJPP_BRANCH' => $faker->city(),
+                'KJPP_EMAIL' => $faker->companyEmail(),
+                'VALUER_SURVEYOR_EMAIL_1' => $faker->email(),
+                'VALUER_SURVEYOR_PHONE_NUMBER_1' => $faker->phoneNumber(),
+                'VALUER_SURVEYOR_2_EMAIL' => $faker->email(),
+                'VALUER_SURVEYOR_PHONE_NUMBER_2' => $faker->phoneNumber(),
+                'WORKITEMNAME' => $faker->sentence(2),
+                'CREATED_BY' => $faker->name(),
+                'CREATED_ON' => $faker->dateTime(),
+                'MESSAGE' => $faker->sentence(),
+                'IS_DELETE' => 'N',
+                'COLLATERAL_ID' => $COLLATERALID
+            ]);
+
+            // Detail Taksasi
+            DB::table('LMSRETAIL_CMS_M_APPRAISALRESULT')->insert([
+                'INSERTIONORDERID' => $faker->unique()->numberBetween(1, 9999999999),
+                'MAPID' => $MAPID,
+                'BANK_VALUATION_VALUE' => $faker->randomFloat(2, 10000, 1000000),
+                'KJPP_VALUATION_VALUE' => $faker->randomFloat(2, 10000, 1000000),
+                'MARKET_OFFER_VALUE' => $faker->randomFloat(2, 10000, 1000000),
+                'LIQUIDATION_VALUE' => $faker->randomFloat(2, 10000, 1000000),
+                'IS_DELETE' => 'N',
+                'COLLATERAL_SUITABILITY' => $faker->randomElement(['Suitable', 'Not Suitable', 'Pending']),
+                'COLLATERAL_ID' => $COLLATERALID,
+                'GENAPR_ID' => $GENERALAPRAISALID
+            ]);
+
+            // Link Age
+            DB::table('LMSRETAIL_CMS_M_COLLATERALLINKAGE')->insert([
+                'ID' => $faker->unique()->numberBetween(1000, 9999999),
+                'COLLATERAL_ID' => $COLLATERALID,
+                'LOAN_ACCOUNT_NUMBER' => $faker->numerify('LN######'), // Example format: LN123456
+                'BINDING_ALLOCATION_FORM' => $faker->randomElement(['Full Collateral Allocation', 'Partial Collateral Allocation', 'Cross Collateral Allocation', 'Joint Collateral Allocation', 'Shared Collateral Allocation', 'Reserve Collateral Allocation', 'Contingency Collateral Allocation', 'Specific Collateral Allocation', 'Composite Collateral Allocation', 'Proportional Collateral Allocation']),
+                'BINDING_ALLOCATION_VALUE' => $faker->randomFloat(2, 1000, 100000),
+                'COLLATERAL_LINK_STATUS' => $faker->randomElement(['Active', 'inactive']),
+                'IS_DELETE' => 'N',
+            ]);
+
+            // Link Age Array
+            DB::table('LMSRETAIL_CMS_M_COLLATERALLINKAGEARRAY')->insert([
+                'INSERTIONORDERID' => $faker->unique()->numberBetween(1000, 9999999),
+                'MAPID' => $MAPID,
+                'ID' => $faker->unique()->numberBetween(1000, 9999999),
+                'BINDING_ALLOCATION_FORM' => $faker->randomElement(['Full Collateral Allocation', 'Partial Collateral Allocation', 'Cross Collateral Allocation', 'Joint Collateral Allocation', 'Shared Collateral Allocation', 'Reserve Collateral Allocation', 'Contingency Collateral Allocation', 'Specific Collateral Allocation', 'Composite Collateral Allocation', 'Proportional Collateral Allocation']),
+                'BINDING_ALLOCATION_VALUE' => $faker->randomFloat(2, 1000, 100000),
+                'COLLATERAL_LINK_STATUS' => $faker->randomElement(['Active', 'inactive']),
+                'COLLATERAL_TRANSACTION_DETAILS' => $faker->sentence,
+                'PRODUCT_TRANSCTION_DETAIL' => $faker->sentence,
+                'PERCENTAGE_LINKAGE_NUMBER' => $faker->randomFloat(2, 0, 100),
+                'DEFAULT_LINKAGE' => $faker->randomFloat(2, 1000000, 1000000000),
+                'AVAILABLE_LINKAGE' => $faker->randomFloat(2, 1000000, 1000000000),
+                'COLLATERAL_ID' => $COLLATERALID,
+                'LOAN_ACCOUNT_NUMBER' => $LOAN_ACCOUNT_NUMBER,
+                'WORKITEMNAME' => $faker->word,
+                'CREATEDBY' => $faker->name,
+                'CREATEDON' => $faker->dateTimeThisYear(),
+                'MESSAGE' => $faker->text(100),
+                'IS_DELETE' => 'N'
+            ]);
+
+            // Keputusan
+            DB::table('LMSRETAIL_CMS_T_HISTORYMAINTENANCES')->insert([
+                'INSERTIONORDERID' => $faker->unique()->numberBetween(1000, 9999999),
+                'MAPID' => $MAPID,
+                'ID' => $faker->unique()->numberBetween(1000, 9999999),
+                'FIELD_NAME' => $faker->randomElement(['COLLATERAL_BINDING_TYPE', 'BINDING_DOCUMENT_TYPE', 'BINDING_COVER_NOTE_NUMBER', 'BINDING_COVER_NOTE_DATE', 'BINDING_COVER_NOTE_EXPIRY_DATE', 'NOTARY_NAME', 'DOCUMENT_CERTIFICATE_NUMBER_OF_BINDING', 'BINDING_DOCUMENT_DATE', 'BINDING_STATUS', 'BINDING_CURRENCY', 'BINDING_AMOUNT', 'COLLATERAL_CONTROL', 'BINDING_RANK', 'UPLOAD_NOTARY_DOCUMENT', 'PROCESSING_OR_BINDING_ORDER_DATE', 'NOTARY_PROCESS_SLA', 'ISSUE_CATEGORY', 'ISSUE_SUBCATEGORY', 'OWNERSHIP_EVIDENCE_COVER_NOTE_NUMBER', 'OWNERSHIP_EVIDENCE_COVER_NOTE_DATE', 'PROCESSING_OR_OWNERSHIP_EVIDENCE_ORDER_DATE', 'OWNERSHIP_EVIDENCE_COVER_NOTE_EXPIRY_DATE', 'NOTARY_NAME_FOR_OWNERSHIP_EVIDENCE', 'PRODUCT_ID', 'PERCENT_PENGIKATAN', 'VALUE_PENGIKATAN']),
+                'FIELD_ID' => $faker->randomNumber(),
+                'PREVIOUS_VALUE' => $faker->word,
+                'UPDATED_VALUE' => $faker->word,
+                'UPDATED_BY' => $faker->name,
+                'DATETIME' => $faker->dateTimeBetween('-1 years', 'now')->format('Y-m-d H:i:s'),
+            ]);
+
+            $endTime = microtime(true);
+            $executionTime = $endTime - $startTime;
+
+            $this->command->info("Data {$no} Successed with execution time: {$executionTime} s. . [System Status: Optimal]");
         }
     }
 
