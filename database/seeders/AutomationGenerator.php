@@ -200,96 +200,96 @@ class AutomationGenerator extends Seeder
 
             $this->command->info("🤖 Created with CIF \033[31m{$CIF}\033[32m | Optimizing parameters... 🚀");
 
-            // DB::table('LMSRETAIL_CMS_M_DEBTORDATA')->insert([
-            //     'CIF' => $CIF,
-            //     'MAPID' => $MAPID,
-            //     'TYPE_OF_CREDIT_FACILITY' => $TYPE_OF_CREDIT_FACILITY,
-            //     'DEBTOR_NAME' => $NAME,
-            //     'REGION' => $REGION,
-            //     'ADDRESS' => $ADDRESS,
-            //     'CITY' => $address['CITY'], // Fake city
-            //     'DISTRICT' => $address['DISTRICT'], // Fake district
-            //     'SUB_DISTRICT' => $address['SUB_DISTRICT'], // Fake sub-district
-            //     'PROVINCE' => $address['PROVINCE'], // Fake province
-            //     'POSTAL_CODE' => $address['POSTAL_CODE'], // Fake postal code
-            //     'IS_DELETE' => 'N', // Fixed value
-            //     'LOAN_ACCOUNT_NUMBER' => $LOAN_ACCOUNT_NUMBER,
-            // ]);
+            DB::table('LMSRETAIL_CMS_M_DEBTORDATA')->insert([
+                'CIF' => $CIF,
+                'MAPID' => $MAPID,
+                'TYPE_OF_CREDIT_FACILITY' => $TYPE_OF_CREDIT_FACILITY,
+                'DEBTOR_NAME' => $NAME,
+                'REGION' => $REGION,
+                'ADDRESS' => $ADDRESS,
+                'CITY' => $address['CITY'], // Fake city
+                'DISTRICT' => $address['DISTRICT'], // Fake district
+                'SUB_DISTRICT' => $address['SUB_DISTRICT'], // Fake sub-district
+                'PROVINCE' => $address['PROVINCE'], // Fake province
+                'POSTAL_CODE' => $address['POSTAL_CODE'], // Fake postal code
+                'IS_DELETE' => 'N', // Fixed value
+                'LOAN_ACCOUNT_NUMBER' => $LOAN_ACCOUNT_NUMBER,
+            ]);
 
-            // DB::table('LMSRETAIL_CMS_M_CREDITFACILITY')->insert([
-            //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000, 9999),
-            //     'MAPID' => $MAPID,
-            //     'CIF' => $CIF,
-            //     'COLLATERAL_ID' => $COLLATERALID,
-            //     'LOAN_ACCOUNT_NUMBER' => $LOAN_ACCOUNT_NUMBER,
-            //     'BNI_BRANCH' => $this->dataBranch[rand(0, count($this->dataBranch) - 1)],
-            //     'MAXIMUM_CREDIT' => $faker->numberBetween(1000000, 500000000),
-            //     'SCHEME' => $SCHEMA,
-            //     'SUB_SCHEME' => $SUBSCHEMA,
-            //     'PRODUCT' => $faker->numberBetween(1, 4),
-            //     'FINANCING_PURPOSE' => $faker->randomElement(['Purchase', 'Construction', 'Renovation']),
-            //     'PROPERTY_TYPE' => $faker->randomElement(['Residential', 'Commercial', 'Industrial']),
-            //     'SPECIAL_PROGRAM' => $faker->randomElement(['Special Program A', 'Special Program ULTAH BNI', 'Special Program Wonder', 'Special Program KPR', 'Tidak Ada', 'Special Program Natal']),
-            //     'PURCHASE_TYPE' => $faker->randomElement(['New Purchase', 'Kredit', 'Cash']),
-            //     'TOP_DEVELOPER' => $COMPANY,
-            //     'COMPANY_NAME' => $COMPANY,
-            //     'COMPANY_NAME_OTHERS' => $faker->optional()->company,
-            //     'COMPANY_TYPE' => $faker->randomElement(['Private', 'Public', 'Government']),
-            //     'TYPE_OF_COMPANY_PKS_COOPERATION' => $faker->randomElement(['PKS', 'Cooperative']),
-            //     'FINANCING_OBJECT_STATUS' => $faker->randomElement(['New', 'Used', 'Renov']),
-            //     'INDENT_STATUS' => $faker->randomElement(['Not Indented', 'Indent']),
-            //     'DEVELOPER_NAME' => $COMPANY . ' Developer',
-            //     'DEVELOPMENT_AREA' => $faker->randomElement(['Area A', 'Area B', 'Area C', 'Area D']),
-            //     'PROJECT' => 'Project ' . $faker->randomElement(['New', 'Existing', 'Current']),
-            //     'PKS_NUMBER' => $faker->unique()->numerify('PKS#####'),
-            //     'IS_DELETE' => 'N',
-            // ]);
+            DB::table('LMSRETAIL_CMS_M_CREDITFACILITY')->insert([
+                'INSERTIONORDERID' => $faker->unique()->numberBetween(1000, 9999),
+                'MAPID' => $MAPID,
+                'CIF' => $CIF,
+                'COLLATERAL_ID' => $COLLATERALID,
+                'LOAN_ACCOUNT_NUMBER' => $LOAN_ACCOUNT_NUMBER,
+                'BNI_BRANCH' => $this->dataBranch[rand(0, count($this->dataBranch) - 1)],
+                'MAXIMUM_CREDIT' => $faker->numberBetween(1000000, 500000000),
+                'SCHEME' => $SCHEMA,
+                'SUB_SCHEME' => $SUBSCHEMA,
+                'PRODUCT' => $faker->numberBetween(1, 4),
+                'FINANCING_PURPOSE' => $faker->randomElement(['Purchase', 'Construction', 'Renovation']),
+                'PROPERTY_TYPE' => $faker->randomElement(['Residential', 'Commercial', 'Industrial']),
+                'SPECIAL_PROGRAM' => $faker->randomElement(['Special Program A', 'Special Program ULTAH BNI', 'Special Program Wonder', 'Special Program KPR', 'Tidak Ada', 'Special Program Natal']),
+                'PURCHASE_TYPE' => $faker->randomElement(['New Purchase', 'Kredit', 'Cash']),
+                'TOP_DEVELOPER' => $COMPANY,
+                'COMPANY_NAME' => $COMPANY,
+                'COMPANY_NAME_OTHERS' => $faker->optional()->company,
+                'COMPANY_TYPE' => $faker->randomElement(['Private', 'Public', 'Government']),
+                'TYPE_OF_COMPANY_PKS_COOPERATION' => $faker->randomElement(['PKS', 'Cooperative']),
+                'FINANCING_OBJECT_STATUS' => $faker->randomElement(['New', 'Used', 'Renov']),
+                'INDENT_STATUS' => $faker->randomElement(['Not Indented', 'Indent']),
+                'DEVELOPER_NAME' => $COMPANY . ' Developer',
+                'DEVELOPMENT_AREA' => $faker->randomElement(['Area A', 'Area B', 'Area C', 'Area D']),
+                'PROJECT' => 'Project ' . $faker->randomElement(['New', 'Existing', 'Current']),
+                'PKS_NUMBER' => $faker->unique()->numerify('PKS#####'),
+                'IS_DELETE' => 'N',
+            ]);
 
-            // DB::table('LMSRETAIL_CMS_M_GENERALCOLLATERALINFO')->insert([
-            //     'COLLATERAL_ID' => $COLLATERALID,
-            //     'MAPID' => $MAPID,
-            //     'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
-            //     'COLLATERAL_DOCUMENT_NUMBER' => $faker->numerify('DOC-######'),
-            //     'COLLATERAL_DOCUMENT_DATE' => $faker->date(),
-            //     'COLLATERAL_DOCUMENT_EXPIRY_DATE' => $faker->date(),
-            //     'COLLATERAL_OWNERS_NAME' => $NAME,
-            //     'COLLATERAL_OWNERS_ADDRESS' => $ADDRESS,
-            //     'SUB_DISTRICT_OWNER' => $address['SUB_DISTRICT'],
-            //     'DISTRICT_OWNER' => $address['DISTRICT'],
-            //     'CITY_OWNER' => $address['CITY'],
-            //     'PROVINCE_OWNER' => $address['PROVINCE'],
-            //     'ADDRESS_COLLATERAL' => $faker->address,
-            //     'SUB_DISTRICT_COLLATERAL' => $address['SUB_DISTRICT'],
-            //     'DISTRICT_COLLATERAL' => $address['DISTRICT'],
-            //     'CITY_COLLATERAL' => $address['CITY'],
-            //     'PROVINCE_COLLATERAL' => $address['PROVINCE'],
-            //     'PARI_PASSU_STATUS' => $faker->boolean ? 'Active' : 'Not Active',
-            //     'SUB_TYPE_OF_COLLATERAL' => $SUBJENISAGUNAN,
-            //     'COLLATERAL_STATUS_FOR_JOINT_ACCOUNT_CREDIT' => 'JointCreditStatus',
-            //     'INSERTIONORDERID' => $faker->numberBetween(1000000, 500000000),
-            //     'UPLOAD_COLLATERAL_DOCUMENT' => $faker->url,
-            //     'WORKITEMNAME' => '-',
-            //     'CREATED_BY' => $faker->userName,
-            //     'CREATED_ON' => $faker->dateTime,
-            //     'MESSAGE' => $faker->sentence,
-            //     'IS_DELETE' => 'N',
-            //     'COLLATERAL_STATUS' => $faker->numberBetween(1, 3),
-            //     'COLLATERAL_CLASSIFICATION' => $faker->numberBetween(1, 2),
-            //     'COLLATERAL_TYPE' => $JENISAGUNAN['JENIS_AGUNAN'],
-            //     'COLLATERAL_FACTOR' => $faker->numberBetween(1, 2),
-            //     'COLLATERAL_OWNERSHIP_STATUS' => $faker->numberBetween(1, 12),
-            //     'POSTAL_CODE_OWNER' => $address['POSTAL_CODE'],
-            //     'SURVEY_CERTIFICATE_NUMBER' => $faker->numerify('CERT-######'),
-            //     'SURVEY_CERTIFICATE_DATE' => $faker->date(),
-            //     'POSTAL_CODE_COLLATERAL' => $address['POSTAL_CODE'],
-            //     'COLLATERAL_DESCRIPTION' => $faker->text(200),
-            //     'BUILDING_PERMIT_OWNERSHIP' => $faker->numberBetween(1, 2),
-            //     'BUILDING_PERMIT_NUMBER' => $faker->numerify('BPN-######'),
-            //     'BUILDING_PERMIT_DATE' => $faker->date(),
-            //     'BUILDING_PERMIT_OWNERS' => $faker->name,
-            //     'COLLATERAL_DOCUMENT_REVIEW_DUE_DATE' => $faker->date(),
-            //     'COLLATERAL_ID_ICONS' => $CIF,
-            // ]);
+            DB::table('LMSRETAIL_CMS_M_GENERALCOLLATERALINFO')->insert([
+                'COLLATERAL_ID' => $COLLATERALID,
+                'MAPID' => $MAPID,
+                'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
+                'COLLATERAL_DOCUMENT_NUMBER' => $faker->numerify('DOC-######'),
+                'COLLATERAL_DOCUMENT_DATE' => $faker->date(),
+                'COLLATERAL_DOCUMENT_EXPIRY_DATE' => $faker->date(),
+                'COLLATERAL_OWNERS_NAME' => $NAME,
+                'COLLATERAL_OWNERS_ADDRESS' => $ADDRESS,
+                'SUB_DISTRICT_OWNER' => $address['SUB_DISTRICT'],
+                'DISTRICT_OWNER' => $address['DISTRICT'],
+                'CITY_OWNER' => $address['CITY'],
+                'PROVINCE_OWNER' => $address['PROVINCE'],
+                'ADDRESS_COLLATERAL' => $faker->address,
+                'SUB_DISTRICT_COLLATERAL' => $address['SUB_DISTRICT'],
+                'DISTRICT_COLLATERAL' => $address['DISTRICT'],
+                'CITY_COLLATERAL' => $address['CITY'],
+                'PROVINCE_COLLATERAL' => $address['PROVINCE'],
+                'PARI_PASSU_STATUS' => $faker->boolean ? 'Active' : 'Not Active',
+                'SUB_TYPE_OF_COLLATERAL' => $SUBJENISAGUNAN,
+                'COLLATERAL_STATUS_FOR_JOINT_ACCOUNT_CREDIT' => 'JointCreditStatus',
+                'INSERTIONORDERID' => $faker->numberBetween(1000000, 500000000),
+                'UPLOAD_COLLATERAL_DOCUMENT' => $faker->url,
+                'WORKITEMNAME' => '-',
+                'CREATED_BY' => $faker->userName,
+                'CREATED_ON' => $faker->dateTime,
+                'MESSAGE' => $faker->sentence,
+                'IS_DELETE' => 'N',
+                'COLLATERAL_STATUS' => $faker->numberBetween(1, 3),
+                'COLLATERAL_CLASSIFICATION' => $faker->numberBetween(1, 2),
+                'COLLATERAL_TYPE' => $JENISAGUNAN['JENIS_AGUNAN'],
+                'COLLATERAL_FACTOR' => $faker->numberBetween(1, 2),
+                'COLLATERAL_OWNERSHIP_STATUS' => $faker->numberBetween(1, 12),
+                'POSTAL_CODE_OWNER' => $address['POSTAL_CODE'],
+                'SURVEY_CERTIFICATE_NUMBER' => $faker->numerify('CERT-######'),
+                'SURVEY_CERTIFICATE_DATE' => $faker->date(),
+                'POSTAL_CODE_COLLATERAL' => $address['POSTAL_CODE'],
+                'COLLATERAL_DESCRIPTION' => $faker->text(200),
+                'BUILDING_PERMIT_OWNERSHIP' => $faker->numberBetween(1, 2),
+                'BUILDING_PERMIT_NUMBER' => $faker->numerify('BPN-######'),
+                'BUILDING_PERMIT_DATE' => $faker->date(),
+                'BUILDING_PERMIT_OWNERS' => $faker->name,
+                'COLLATERAL_DOCUMENT_REVIEW_DUE_DATE' => $faker->date(),
+                'COLLATERAL_ID_ICONS' => $CIF,
+            ]);
 
             // Feeding data Collateral Details
             switch ($JENISAGUNAN['JENIS_BENTUK_AGUNAN']) {
@@ -307,96 +307,96 @@ class AutomationGenerator extends Seeder
                     $MARKET_VALUE_OF_BUILDING_PER_M2 = $BUILDING_VALUE_PER_M2 - ($BUILDING_VALUE_PER_M2 * $DEPRECIATION);
                     $MARKET_AREA_VALUE_OF_BUILDING = $MARKET_VALUE_OF_BUILDING_PER_M2 * $BUILDING_AREA;
 
-                    // DB::table('LMSRETAIL_CMS_M_LAND_BUILDINGCOLLATERALDETAILS')->insert([
-                    //     'GARAGE' => $faker->numberBetween(1, 3),
-                    //     'LIVING_ROOM' => $faker->numberBetween(1, 3),
-                    //     'KITCHEN' => $faker->numberBetween(1, 3),
-                    //     'WAREHOUSE' => $faker->numberBetween(1, 3),
-                    //     'MAIDS_ROOM' => $faker->numberBetween(1, 3),
-                    //     'TERRACE' => $faker->numberBetween(1, 3),
-                    //     'BALCONY' => $faker->numberBetween(1, 3),
-                    //     'SWIMMING_POOL' => $faker->numberBetween(0, 2),
-                    //     'ELECTRICITY_SUPPLY' => $faker->randomElement(['Ada', 'Tidak Ada']),
-                    //     'INTERNET_CONNECTION' => $faker->randomElement(['Ada', 'Tidak Ada']),
-                    //     'TELEPHONE_LINE' => $faker->randomElement(['Ada', 'Tidak Ada']),
-                    //     'WATER_SOURCE' => $faker->randomElement(['Ada', 'Tidak Ada']),
-                    //     'ROAD_CONDITION' => $faker->numberBetween(1, 3),
-                    //     'EASE_OF_ACCESS' => $faker->numberBetween(1, 4),
-                    //     'SHOPPING_CONVENIENCE' => $faker->numberBetween(1, 3),
-                    //     'SCHOOL_CONVENIENCE' => $faker->numberBetween(1, 3),
-                    //     'TRANSPORTATION_CONVENIENCE' => $faker->numberBetween(1, 3),
-                    //     'RECREATION_CONVENIENCE' => $faker->numberBetween(1, 3),
-                    //     'WORSHIP_PLACE' => $faker->randomElement(['Ada', 'Tidak Ada']),
-                    //     'HOSPITAL' => $faker->randomElement(['Ada', 'Tidak Ada']),
-                    //     'CRIME_POTENTIAL' => $faker->numberBetween(1, 3),
-                    //     'FIRE_POTENTIAL' => $faker->numberBetween(1, 3),
-                    //     'NATURAL_DISASTER_POTENTIAL' => $faker->numberBetween(1, 3),
-                    //     'FUTURE_LAND_USE_PLANNING' => $faker->numberBetween(1, 4),
-                    //     'ECONOMIC_LIFE' => $faker->numberBetween(1, 5),
-                    //     'INTERSECTION_LOCATION' => $faker->randomElement(['Sutet', 'TPU', 'Tempat Pembuangan Sampah', 'Tempat Ibadah', 'Tidak Ada']),
-                    //     'MARKETABILITY_AND_LIQUIDITY_OF_COLLATERAL' => $faker->numberBetween(1, 3),
-                    //     'MARKET_CONDITION' => $faker->numberBetween(1, 4),
-                    //     'DATA_SOURCE' => $faker->company,
-                    //     'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
-                    //     'ANALYSIS_RESULT_DESCRIPTION' => $faker->randomElement(['Baik Untuk Rumah', 'Baik', 'Kurang']),
-                    //     'OCCUPIED_BY' => $faker->name,
-                    //     'ZONE' => $faker->city,
-                    //     'SUB_ZONE' => $faker->streetName,
-                    //     'NJOP_BUILDING_VALUE' => $faker->numberBetween(1000000, 100000000),
-                    //     'ADD_EFFECTIVE_AGE' => $ADD_EFFECTIVE_AGE,
-                    //     'EFFECTIVE_AGE' => $EFFECTIVE_AGE,
-                    //     'NEW_REPRODUCTION_COST' => $NEW_REPRODUCTION_COST,
-                    //     'FLOOR_INDEX' => $FLOOR_INDEX,
-                    //     'BUILDING_VALUE_AFTER_FLOOR_INDEX' => $BUILDING_VALUE_AFTER_FLOOR_INDEX,
-                    //     'ADJUSTMENT' => $ADJUSTMENT,
-                    //     'BUILDING_VALUE_PER_M2' => $BUILDING_VALUE_PER_M2,
-                    //     'NEW_REPRODUCTION_COST_VALUE' => $NEW_REPRODUCTION_COST_VALUE,
-                    //     'DEPRECIATION' => $DEPRECIATION,
-                    //     'MARKET_VALUE_OF_BUILDING_PER_M2' => $MARKET_VALUE_OF_BUILDING_PER_M2,
-                    //     'MARKET_AREA_VALUE_OF_BUILDING' => $MARKET_AREA_VALUE_OF_BUILDING,
-                    //     'ELEVATION' => $faker->randomFloat(2, 0, 100),
-                    //     'ID_COMPARISON_2' => null,
-                    //     'ID_COMPARISON_3' => null,
-                    //     'NJOP_LAND_VALUE' => $faker->numberBetween(1000000, 100000000),
-                    //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
-                    //     'ELEVATION_DISTANCE' => $faker->randomFloat(2, 0, 100),
-                    //     'FRONT_WIDTH' => $faker->randomFloat(2, 0, 50),
-                    //     'LAND_AREA' => $faker->numberBetween(100, 10000),
-                    //     'YEAR_BUILT' => $faker->date(),
-                    //     'YEAR_RENOVATED' => $faker->date(),
-                    //     'BUILDING_AREA' => $BUILDING_AREA,
-                    //     'BUILDING_AREA_ACCORDING_TO_BUILDING_PERMIT' => $faker->numberBetween(50, 1000),
-                    //     'NUMBER_OF_FLOORS' => $faker->numberBetween(1, 5),
-                    //     'NUMBER_OF_BEDROOMS' => $faker->numberBetween(1, 3),
-                    //     'NUMBER_OF_BATHROOMS' => $faker->numberBetween(1, 3),
-                    //     'ROAD_WIDTH_IN_FRONT_OF_OBJECT' => $faker->numberBetween(1, 3),
-                    //     'ID_COMPARISON_1' => null,
-                    //     'COLLATERAL_ID' => $COLLATERALID,
-                    //     'MAPID' => $MAPID,
-                    //     'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
-                    //     'ALLOCATION' => $faker->randomElement(['Alokasi', 'Non Alokasi']),
-                    //     'LAND_USE_COMPATIBILITY_OF_THE_COLLATERAL_LOCATION' => $faker->numberBetween(1, 2),
-                    //     'LAND_SHAPE' => $faker->numberBetween(1, 6),
-                    //     'COORDINATES_FROM_GOOGLE' => $faker->latitude . ', ' . $faker->longitude,
-                    //     'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
-                    //     'FOUNDATION' => $faker->numberBetween(1, 5),
-                    //     'WALLS' => $faker->numberBetween(1, 5),
-                    //     'CEILING' => $faker->numberBetween(1, 4),
-                    //     'ROOF_STRUCTURE' => $faker->numberBetween(1, 4),
-                    //     'WINDOW_FRAMES' => $faker->numberBetween(1, 5),
-                    //     'ROOF' => $faker->numberBetween(1, 4),
-                    //     'DOORS' => $faker->numberBetween(1, 4),
-                    //     'WINDOWS' => $faker->numberBetween(1, 3),
-                    //     'FLOOR_MATERIAL' => $faker->numberBetween(1, 5),
-                    //     'ROOM_DIVIDERS' => $faker->numberBetween(1, 4),
-                    //     'FENCE' => $faker->numberBetween(1, 5),
-                    //     'NORTH_NORTHEAST_SIDE' => $faker->numberBetween(1, 4),
-                    //     'SOUTH_SOUTHWEST_SIDE' => $faker->numberBetween(1, 4),
-                    //     'EAST_SOUTHEAST_SIDE' => $faker->numberBetween(1, 4),
-                    //     'WEST_NORTHWEST_SIDE' => $faker->numberBetween(1, 4),
-                    //     'FAMILY_ROOM' => $faker->numberBetween(1, 3),
-                    //     'CIF' => $CIF
-                    // ]);
+                    DB::table('LMSRETAIL_CMS_M_LAND_BUILDINGCOLLATERALDETAILS')->insert([
+                        'GARAGE' => $faker->numberBetween(1, 3),
+                        'LIVING_ROOM' => $faker->numberBetween(1, 3),
+                        'KITCHEN' => $faker->numberBetween(1, 3),
+                        'WAREHOUSE' => $faker->numberBetween(1, 3),
+                        'MAIDS_ROOM' => $faker->numberBetween(1, 3),
+                        'TERRACE' => $faker->numberBetween(1, 3),
+                        'BALCONY' => $faker->numberBetween(1, 3),
+                        'SWIMMING_POOL' => $faker->numberBetween(0, 2),
+                        'ELECTRICITY_SUPPLY' => $faker->randomElement(['Ada', 'Tidak Ada']),
+                        'INTERNET_CONNECTION' => $faker->randomElement(['Ada', 'Tidak Ada']),
+                        'TELEPHONE_LINE' => $faker->randomElement(['Ada', 'Tidak Ada']),
+                        'WATER_SOURCE' => $faker->randomElement(['Ada', 'Tidak Ada']),
+                        'ROAD_CONDITION' => $faker->numberBetween(1, 3),
+                        'EASE_OF_ACCESS' => $faker->numberBetween(1, 4),
+                        'SHOPPING_CONVENIENCE' => $faker->numberBetween(1, 3),
+                        'SCHOOL_CONVENIENCE' => $faker->numberBetween(1, 3),
+                        'TRANSPORTATION_CONVENIENCE' => $faker->numberBetween(1, 3),
+                        'RECREATION_CONVENIENCE' => $faker->numberBetween(1, 3),
+                        'WORSHIP_PLACE' => $faker->randomElement(['Ada', 'Tidak Ada']),
+                        'HOSPITAL' => $faker->randomElement(['Ada', 'Tidak Ada']),
+                        'CRIME_POTENTIAL' => $faker->numberBetween(1, 3),
+                        'FIRE_POTENTIAL' => $faker->numberBetween(1, 3),
+                        'NATURAL_DISASTER_POTENTIAL' => $faker->numberBetween(1, 3),
+                        'FUTURE_LAND_USE_PLANNING' => $faker->numberBetween(1, 4),
+                        'ECONOMIC_LIFE' => $faker->numberBetween(1, 5),
+                        'INTERSECTION_LOCATION' => $faker->randomElement(['Sutet', 'TPU', 'Tempat Pembuangan Sampah', 'Tempat Ibadah', 'Tidak Ada']),
+                        'MARKETABILITY_AND_LIQUIDITY_OF_COLLATERAL' => $faker->numberBetween(1, 3),
+                        'MARKET_CONDITION' => $faker->numberBetween(1, 4),
+                        'DATA_SOURCE' => $faker->company,
+                        'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
+                        'ANALYSIS_RESULT_DESCRIPTION' => $faker->randomElement(['Baik Untuk Rumah', 'Baik', 'Kurang']),
+                        'OCCUPIED_BY' => $faker->name,
+                        'ZONE' => $faker->city,
+                        'SUB_ZONE' => $faker->streetName,
+                        'NJOP_BUILDING_VALUE' => $faker->numberBetween(1000000, 100000000),
+                        'ADD_EFFECTIVE_AGE' => $ADD_EFFECTIVE_AGE,
+                        'EFFECTIVE_AGE' => $EFFECTIVE_AGE,
+                        'NEW_REPRODUCTION_COST' => $NEW_REPRODUCTION_COST,
+                        'FLOOR_INDEX' => $FLOOR_INDEX,
+                        'BUILDING_VALUE_AFTER_FLOOR_INDEX' => $BUILDING_VALUE_AFTER_FLOOR_INDEX,
+                        'ADJUSTMENT' => $ADJUSTMENT,
+                        'BUILDING_VALUE_PER_M2' => $BUILDING_VALUE_PER_M2,
+                        'NEW_REPRODUCTION_COST_VALUE' => $NEW_REPRODUCTION_COST_VALUE,
+                        'DEPRECIATION' => $DEPRECIATION,
+                        'MARKET_VALUE_OF_BUILDING_PER_M2' => $MARKET_VALUE_OF_BUILDING_PER_M2,
+                        'MARKET_AREA_VALUE_OF_BUILDING' => $MARKET_AREA_VALUE_OF_BUILDING,
+                        'ELEVATION' => $faker->randomFloat(2, 0, 100),
+                        'ID_COMPARISON_2' => null,
+                        'ID_COMPARISON_3' => null,
+                        'NJOP_LAND_VALUE' => $faker->numberBetween(1000000, 100000000),
+                        'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
+                        'ELEVATION_DISTANCE' => $faker->randomFloat(2, 0, 100),
+                        'FRONT_WIDTH' => $faker->randomFloat(2, 0, 50),
+                        'LAND_AREA' => $faker->numberBetween(100, 10000),
+                        'YEAR_BUILT' => $faker->date(),
+                        'YEAR_RENOVATED' => $faker->date(),
+                        'BUILDING_AREA' => $BUILDING_AREA,
+                        'BUILDING_AREA_ACCORDING_TO_BUILDING_PERMIT' => $faker->numberBetween(50, 1000),
+                        'NUMBER_OF_FLOORS' => $faker->numberBetween(1, 5),
+                        'NUMBER_OF_BEDROOMS' => $faker->numberBetween(1, 3),
+                        'NUMBER_OF_BATHROOMS' => $faker->numberBetween(1, 3),
+                        'ROAD_WIDTH_IN_FRONT_OF_OBJECT' => $faker->numberBetween(1, 3),
+                        'ID_COMPARISON_1' => null,
+                        'COLLATERAL_ID' => $COLLATERALID,
+                        'MAPID' => $MAPID,
+                        'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
+                        'ALLOCATION' => $faker->randomElement(['Alokasi', 'Non Alokasi']),
+                        'LAND_USE_COMPATIBILITY_OF_THE_COLLATERAL_LOCATION' => $faker->numberBetween(1, 2),
+                        'LAND_SHAPE' => $faker->numberBetween(1, 6),
+                        'COORDINATES_FROM_GOOGLE' => $faker->latitude . ', ' . $faker->longitude,
+                        'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
+                        'FOUNDATION' => $faker->numberBetween(1, 5),
+                        'WALLS' => $faker->numberBetween(1, 5),
+                        'CEILING' => $faker->numberBetween(1, 4),
+                        'ROOF_STRUCTURE' => $faker->numberBetween(1, 4),
+                        'WINDOW_FRAMES' => $faker->numberBetween(1, 5),
+                        'ROOF' => $faker->numberBetween(1, 4),
+                        'DOORS' => $faker->numberBetween(1, 4),
+                        'WINDOWS' => $faker->numberBetween(1, 3),
+                        'FLOOR_MATERIAL' => $faker->numberBetween(1, 5),
+                        'ROOM_DIVIDERS' => $faker->numberBetween(1, 4),
+                        'FENCE' => $faker->numberBetween(1, 5),
+                        'NORTH_NORTHEAST_SIDE' => $faker->numberBetween(1, 4),
+                        'SOUTH_SOUTHWEST_SIDE' => $faker->numberBetween(1, 4),
+                        'EAST_SOUTHEAST_SIDE' => $faker->numberBetween(1, 4),
+                        'WEST_NORTHWEST_SIDE' => $faker->numberBetween(1, 4),
+                        'FAMILY_ROOM' => $faker->numberBetween(1, 3),
+                        'CIF' => $CIF
+                    ]);
                     break;
                 case 2:
                     $BRANDS = [
@@ -448,43 +448,43 @@ class AutomationGenerator extends Seeder
                     $BRAND = $BRANDS[array_rand($BRANDS)];
                     $MODELTYPE = $MODELTYPES[$BRAND][array_rand($MODELTYPES[$BRAND])];
 
-                    // DB::table('LMSRETAIL_CMS_M_VEHICLECOLLATERALDETAILS')->insert([
-                    //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
-                    //     'MAPID' => $MAPID,
-                    //     'COLLATERAL_ID' => $CIF,
-                    //     'TYPE_OF_MOTOR_VEHICLE' => $faker->numberBetween(1, 5),
-                    //     'BRAND' => $BRAND,
-                    //     'MODEL_TYPE' => $MODELTYPE,
-                    //     'YEAR_OF_MANUFACTURE' => $faker->date(),
-                    //     'YEAR_OF_ASSEMBLY' => $faker->date(),
-                    //     'CYLINDER_CAPACITY_ELECTRIC_POWER' => $faker->randomNumber(3) . ' cc',
-                    //     'VEHICLE_COLOR' => $faker->safeColorName,
-                    //     'CHASIS_NUMBER' => strtoupper($faker->bothify('??###??###??')),
-                    //     'ENGINE_NUMBER' => strtoupper($faker->bothify('ENG##??##??###')),
-                    //     'FUEL_ENERGY_SOURCE' => $faker->numberBetween(1, 3),
-                    //     'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
-                    //     'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
-                    //     'CONCLUSION_OF_ANALYSIS_RESULT' => $faker->randomElement(['Sangat Bagus', 'Baik', 'Kurang']),
-                    //     'LICENSE_PLATE_NUMBER' => strtoupper($faker->bothify('?? #### ??')),
-                    //     'ID_COMPARISON_1' => null,
-                    //     'ID_COMPARISON_2' => null,
-                    //     'ID_COMPARISON_3' => null,
-                    //     'COLLATERAL_STATUS' => $faker->numberBetween(1, 3),
-                    //     'COLLATERAL_CLASIFICATION' => $faker->numberBetween(1, 2),
-                    //     'COLLATERAL_TYPE' => $JENISAGUNAN['JENIS_AGUNAN'],
-                    //     'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
-                    //     'COLLATERAL_FACTOR' => $faker->numberBetween(1, 2),
-                    //     'COLLATERAL_OWNERSHIP_STATUS' => $faker->numberBetween(1, 12),
-                    //     'COLLATERAL_DOCUMENT_NUMBER' => strtoupper($faker->bothify('DOC##??##??###')),
-                    //     'COLLATERAL_DOCUMENT_DATE' => $faker->date,
-                    //     'COLLATERAL_DOCUMENT_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+5 years')->format('Y-m-d'),
-                    //     'UPLOAD_COLLATERAL_DOCUMENT' => $faker->fileExtension,
-                    //     'WORKITEMNAME' => $faker->word,
-                    //     'CREATED_BY' => $faker->name,
-                    //     'MESSAGE' => $faker->sentence,
-                    //     'IS_DELETE' => 'N',
-                    //     'CREATED_ON' => $faker->dateTimeThisYear->format('Y-m-d H:i:s'),
-                    // ]);
+                    DB::table('LMSRETAIL_CMS_M_VEHICLECOLLATERALDETAILS')->insert([
+                        'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
+                        'MAPID' => $MAPID,
+                        'COLLATERAL_ID' => $CIF,
+                        'TYPE_OF_MOTOR_VEHICLE' => $faker->numberBetween(1, 5),
+                        'BRAND' => $BRAND,
+                        'MODEL_TYPE' => $MODELTYPE,
+                        'YEAR_OF_MANUFACTURE' => $faker->date(),
+                        'YEAR_OF_ASSEMBLY' => $faker->date(),
+                        'CYLINDER_CAPACITY_ELECTRIC_POWER' => $faker->randomNumber(3) . ' cc',
+                        'VEHICLE_COLOR' => $faker->safeColorName,
+                        'CHASIS_NUMBER' => strtoupper($faker->bothify('??###??###??')),
+                        'ENGINE_NUMBER' => strtoupper($faker->bothify('ENG##??##??###')),
+                        'FUEL_ENERGY_SOURCE' => $faker->numberBetween(1, 3),
+                        'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
+                        'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
+                        'CONCLUSION_OF_ANALYSIS_RESULT' => $faker->randomElement(['Sangat Bagus', 'Baik', 'Kurang']),
+                        'LICENSE_PLATE_NUMBER' => strtoupper($faker->bothify('?? #### ??')),
+                        'ID_COMPARISON_1' => null,
+                        'ID_COMPARISON_2' => null,
+                        'ID_COMPARISON_3' => null,
+                        'COLLATERAL_STATUS' => $faker->numberBetween(1, 3),
+                        'COLLATERAL_CLASIFICATION' => $faker->numberBetween(1, 2),
+                        'COLLATERAL_TYPE' => $JENISAGUNAN['JENIS_AGUNAN'],
+                        'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
+                        'COLLATERAL_FACTOR' => $faker->numberBetween(1, 2),
+                        'COLLATERAL_OWNERSHIP_STATUS' => $faker->numberBetween(1, 12),
+                        'COLLATERAL_DOCUMENT_NUMBER' => strtoupper($faker->bothify('DOC##??##??###')),
+                        'COLLATERAL_DOCUMENT_DATE' => $faker->date,
+                        'COLLATERAL_DOCUMENT_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+5 years')->format('Y-m-d'),
+                        'UPLOAD_COLLATERAL_DOCUMENT' => $faker->fileExtension,
+                        'WORKITEMNAME' => $faker->word,
+                        'CREATED_BY' => $faker->name,
+                        'MESSAGE' => $faker->sentence,
+                        'IS_DELETE' => 'N',
+                        'CREATED_ON' => $faker->dateTimeThisYear->format('Y-m-d H:i:s'),
+                    ]);
                     break;
                 case 3;
                     $BRANDS = [
@@ -537,39 +537,39 @@ class AutomationGenerator extends Seeder
                     $BRAND = $BRANDS[array_rand($BRANDS)];
                     $MODELTYPE = $MODELTYPES[$BRAND][array_rand($MODELTYPES[$BRAND])];
 
-                    // DB::table('LMSRETAIL_CMS_M_HEAVYEQUIPMENTCOLLATERALDETAILS')->insert([
-                    //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
-                    //     'COLLATERAL_ID' => $COLLATERALID,
-                    //     'MAPID' => $MAPID,
-                    //     'TYPE_OF_HEAVY_EQUIPMENT' => $faker->numberBetween(1, 10),
-                    //     'BRAND_TYPE' => $BRAND,
-                    //     'MODEL_TYPE' => $MODELTYPE,
-                    //     'EQUIPMENT_USED_FOR' => $faker->randomElement(['Construction', 'Mining', 'Agriculture', 'Logistics']),
-                    //     'YEAR_OF_MANUFACTURE' => $faker->year,
-                    //     'YEAR_OF_ASSEMBLY' => $faker->year,
-                    //     'CYLINDER_CAPACITY' => $faker->randomNumber(4) . ' cc',
-                    //     'INSTALED_CAPACITY' => $faker->randomNumber(5) . ' kW',
-                    //     'CHASSIS_NUMBER' => strtoupper($faker->bothify('??###??###??')),
-                    //     'ENGINE_NUMBER' => strtoupper($faker->bothify('ENG##??##??###')),
-                    //     'USAGE_FREQUENCY' => $faker->randomElement(['High', 'Medium', 'Low']),
-                    //     'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
-                    //     'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
-                    //     'CONCLUSION_OF_ANALYSIS_RESULT' => $faker->randomElement(['Sangat Bagus', 'Baik', 'Kurang']),
-                    //     'ID_COMPARISON_1' => null,
-                    //     'ID_COMPARISON_2' => null,
-                    //     'ID_COMPARISON_3' => null,
-                    //     'COLLATERAL_STATUS' => $faker->numberBetween(1, 3),
-                    //     'COLLATERAL_CLASIFICATION' => $faker->numberBetween(1, 2),
-                    //     'COLLATERAL_TYPE' => $JENISAGUNAN['JENIS_AGUNAN'],
-                    //     'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
-                    //     'COLLATERAL_FACTOR' => $faker->randomElement(['High', 'Medium', 'Low']),
-                    //     'COLLATERAL_OWNERSHIP_STATUS' => $faker->numberBetween(1, 12),
-                    //     'COLLATERAL_DOCUMENT_NUMBER' => strtoupper($faker->bothify('DOC##??##??###')),
-                    //     'COLLATERAL_DOCUMENT_DATE' => $faker->date,
-                    //     'COLLATERAL_DOCUMENT_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+5 years')->format('Y-m-d'),
-                    //     'UPLOAD_COLLATERAL_DOCUMENT' => $faker->fileExtension,
-                    //     'IS_DELETE' => 'N',
-                    // ]);
+                    DB::table('LMSRETAIL_CMS_M_HEAVYEQUIPMENTCOLLATERALDETAILS')->insert([
+                        'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
+                        'COLLATERAL_ID' => $COLLATERALID,
+                        'MAPID' => $MAPID,
+                        'TYPE_OF_HEAVY_EQUIPMENT' => $faker->numberBetween(1, 10),
+                        'BRAND_TYPE' => $BRAND,
+                        'MODEL_TYPE' => $MODELTYPE,
+                        'EQUIPMENT_USED_FOR' => $faker->randomElement(['Construction', 'Mining', 'Agriculture', 'Logistics']),
+                        'YEAR_OF_MANUFACTURE' => $faker->year,
+                        'YEAR_OF_ASSEMBLY' => $faker->year,
+                        'CYLINDER_CAPACITY' => $faker->randomNumber(4) . ' cc',
+                        'INSTALED_CAPACITY' => $faker->randomNumber(5) . ' kW',
+                        'CHASSIS_NUMBER' => strtoupper($faker->bothify('??###??###??')),
+                        'ENGINE_NUMBER' => strtoupper($faker->bothify('ENG##??##??###')),
+                        'USAGE_FREQUENCY' => $faker->randomElement(['High', 'Medium', 'Low']),
+                        'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
+                        'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
+                        'CONCLUSION_OF_ANALYSIS_RESULT' => $faker->randomElement(['Sangat Bagus', 'Baik', 'Kurang']),
+                        'ID_COMPARISON_1' => null,
+                        'ID_COMPARISON_2' => null,
+                        'ID_COMPARISON_3' => null,
+                        'COLLATERAL_STATUS' => $faker->numberBetween(1, 3),
+                        'COLLATERAL_CLASIFICATION' => $faker->numberBetween(1, 2),
+                        'COLLATERAL_TYPE' => $JENISAGUNAN['JENIS_AGUNAN'],
+                        'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
+                        'COLLATERAL_FACTOR' => $faker->randomElement(['High', 'Medium', 'Low']),
+                        'COLLATERAL_OWNERSHIP_STATUS' => $faker->numberBetween(1, 12),
+                        'COLLATERAL_DOCUMENT_NUMBER' => strtoupper($faker->bothify('DOC##??##??###')),
+                        'COLLATERAL_DOCUMENT_DATE' => $faker->date,
+                        'COLLATERAL_DOCUMENT_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+5 years')->format('Y-m-d'),
+                        'UPLOAD_COLLATERAL_DOCUMENT' => $faker->fileExtension,
+                        'IS_DELETE' => 'N',
+                    ]);
 
                     break;
                 case 4:
@@ -622,52 +622,52 @@ class AutomationGenerator extends Seeder
                     $BRAND = $BRANDS[array_rand($BRANDS)];
                     $MODELTYPE = $MODELTYPES[$BRAND][array_rand($MODELTYPES[$BRAND])];
 
-                    // DB::table('LMSRETAIL_CMS_M_MACHINERYCOLLATERALDETAILS')->insert([
-                    //     'ID' => $faker->numberBetween(1000, 1000000),
-                    //     'COLLATERAL_ID' => $COLLATERALID,
-                    //     'MAPID' => $MAPID,
-                    //     'TYPE_OF_MACHINERY_AND_EQUIPMENT' => $faker->randomElement(['Manufacturing', 'Processing', 'Construction', 'Agriculture']),
-                    //     'MACHINE_NAME' => $MODELTYPE,
-                    //     'BRAND' => $BRAND,
-                    //     'MACHINE_MANUFACTURER_NAME' => $BRAND,
-                    //     'MACHINE_TYPE' => $faker->randomElement(['Lathe', 'Drill', 'Compressor', 'Excavator']),
-                    //     'MACHINE_SERIAL_NUMBER' => strtoupper($faker->bothify('SER##??##??###')),
-                    //     'YEAR_OF_ASSEMBLY' => $faker->date(),
-                    //     'FUNCTIONAL_OBSOLESCENCE' => $faker->randomElement(['Low', 'Medium', 'High']),
-                    //     'REMAINING_ECONOMIC_LIFE' => $faker->numberBetween(1, 20) . ' years',
-                    //     'INSTALLED_CAPACITY' => $faker->numberBetween(1000, 5000) . ' kW',
-                    //     'PRODUCTION_CAPACITY' => $faker->numberBetween(100, 1000) . ' units/hour',
-                    //     'AUXILIARY_EQUIPMENT' => $faker->randomElement(['Compressor', 'Conveyor Belt', 'Cooling Unit']),
-                    //     'DRIVE_SYSTEM_AND_UNITS' => $faker->randomElement(['Hydraulic', 'Electric', 'Mechanical']),
-                    //     'CONTROL_EQUIPMENT' => $faker->randomElement(['Manual', 'Semi-Automated', 'Automated']),
-                    //     'INSTALLATION' => $faker->sentence,
-                    //     'FOUNDATION' => $faker->randomElement(['Concrete', 'Steel Frame']),
-                    //     'WORK_FLOOR' => $faker->randomElement(['Smooth Concrete', 'Anti-Slip Surface']),
-                    //     'SUPPORTING_STRUCTURE' => $faker->randomElement(['Steel Beams', 'Reinforced Concrete']),
-                    //     'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
-                    //     'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
-                    //     'CONCLUSION_OF_ANALYSIS_RESULTS' => $faker->sentence,
-                    //     'ID_COMPARISON_1' => $faker->uuid,
-                    //     'ID_COMPARISON_2' => $faker->uuid,
-                    //     'ID_COMPARISON_3' => $faker->uuid,
-                    //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
-                    //     'COLLATERAL_STATUS' => $faker->numberBetween(1, 3),
-                    //     'COLLATERAL_CLASIFICATION' => $faker->numberBetween(1, 2),
-                    //     'COLLATERAL_TYPE' => $JENISAGUNAN['JENIS_AGUNAN'],
-                    //     'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
-                    //     'COLLATERAL_FACTOR' => $faker->randomElement(['High', 'Medium', 'Low']),
-                    //     'COLLATERAL_OWNERSHIP_STATUS' => $faker->numberBetween(1, 12),
-                    //     'COLLATERAL_DOCUMENT_NUMBER' => strtoupper($faker->bothify('DOC##??##??###')),
-                    //     'COLLATERAL_DOCUMENT_DATE' => $faker->date,
-                    //     'COLLATERAL_DOCUMENT_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+5 years')->format('Y-m-d'),
-                    //     'UPLOAD_COLLATERAL_DOCUMENT' => $faker->fileExtension,
-                    //     'CIF' => $CIF,
-                    //     'WORKITEMNAME' => $faker->word,
-                    //     'CREATED_ON' => $faker->dateTimeBetween('-2 years', 'now')->format('Y-m-d H:i:s'),
-                    //     'CREATED_BY' => $faker->name,
-                    //     'MESSAGE' => $faker->sentence,
-                    //     'IS_DELETE' => 'N',
-                    // ]);
+                    DB::table('LMSRETAIL_CMS_M_MACHINERYCOLLATERALDETAILS')->insert([
+                        'ID' => $faker->numberBetween(1000, 1000000),
+                        'COLLATERAL_ID' => $COLLATERALID,
+                        'MAPID' => $MAPID,
+                        'TYPE_OF_MACHINERY_AND_EQUIPMENT' => $faker->randomElement(['Manufacturing', 'Processing', 'Construction', 'Agriculture']),
+                        'MACHINE_NAME' => $MODELTYPE,
+                        'BRAND' => $BRAND,
+                        'MACHINE_MANUFACTURER_NAME' => $BRAND,
+                        'MACHINE_TYPE' => $faker->randomElement(['Lathe', 'Drill', 'Compressor', 'Excavator']),
+                        'MACHINE_SERIAL_NUMBER' => strtoupper($faker->bothify('SER##??##??###')),
+                        'YEAR_OF_ASSEMBLY' => $faker->date(),
+                        'FUNCTIONAL_OBSOLESCENCE' => $faker->randomElement(['Low', 'Medium', 'High']),
+                        'REMAINING_ECONOMIC_LIFE' => $faker->numberBetween(1, 20) . ' years',
+                        'INSTALLED_CAPACITY' => $faker->numberBetween(1000, 5000) . ' kW',
+                        'PRODUCTION_CAPACITY' => $faker->numberBetween(100, 1000) . ' units/hour',
+                        'AUXILIARY_EQUIPMENT' => $faker->randomElement(['Compressor', 'Conveyor Belt', 'Cooling Unit']),
+                        'DRIVE_SYSTEM_AND_UNITS' => $faker->randomElement(['Hydraulic', 'Electric', 'Mechanical']),
+                        'CONTROL_EQUIPMENT' => $faker->randomElement(['Manual', 'Semi-Automated', 'Automated']),
+                        'INSTALLATION' => $faker->sentence,
+                        'FOUNDATION' => $faker->randomElement(['Concrete', 'Steel Frame']),
+                        'WORK_FLOOR' => $faker->randomElement(['Smooth Concrete', 'Anti-Slip Surface']),
+                        'SUPPORTING_STRUCTURE' => $faker->randomElement(['Steel Beams', 'Reinforced Concrete']),
+                        'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
+                        'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
+                        'CONCLUSION_OF_ANALYSIS_RESULTS' => $faker->sentence,
+                        'ID_COMPARISON_1' => $faker->uuid,
+                        'ID_COMPARISON_2' => $faker->uuid,
+                        'ID_COMPARISON_3' => $faker->uuid,
+                        'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
+                        'COLLATERAL_STATUS' => $faker->numberBetween(1, 3),
+                        'COLLATERAL_CLASIFICATION' => $faker->numberBetween(1, 2),
+                        'COLLATERAL_TYPE' => $JENISAGUNAN['JENIS_AGUNAN'],
+                        'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
+                        'COLLATERAL_FACTOR' => $faker->randomElement(['High', 'Medium', 'Low']),
+                        'COLLATERAL_OWNERSHIP_STATUS' => $faker->numberBetween(1, 12),
+                        'COLLATERAL_DOCUMENT_NUMBER' => strtoupper($faker->bothify('DOC##??##??###')),
+                        'COLLATERAL_DOCUMENT_DATE' => $faker->date,
+                        'COLLATERAL_DOCUMENT_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+5 years')->format('Y-m-d'),
+                        'UPLOAD_COLLATERAL_DOCUMENT' => $faker->fileExtension,
+                        'CIF' => $CIF,
+                        'WORKITEMNAME' => $faker->word,
+                        'CREATED_ON' => $faker->dateTimeBetween('-2 years', 'now')->format('Y-m-d H:i:s'),
+                        'CREATED_BY' => $faker->name,
+                        'MESSAGE' => $faker->sentence,
+                        'IS_DELETE' => 'N',
+                    ]);
 
                     break;
                 case 5:
@@ -675,25 +675,25 @@ class AutomationGenerator extends Seeder
                 case 8:
                 case 9:
                 case 13:
-                    // DB::table('LMSRETAIL_CMS_M_OTHERCOLLATERALDETAILS')->insert([
-                    //     'MAPID' => $MAPID,
-                    //     'COLLATERAL_ISSUER' => $faker->company,
-                    //     'COLLATERAL_RATING_AGENCY' => $faker->randomElement(['Moody\'s', 'S&P', 'Fitch Ratings']),
-                    //     'COLLATERAL_RATING_TYPE' => $faker->randomElement(['Long Term', 'Short Term', 'Subordinated']),
-                    //     'COLLATERAL_ISSUER_RATING' => $faker->randomElement(['AA', 'A+', 'BB', 'B-', 'CC']),
-                    //     'COLLATERAL_RATING_DATE' => $faker->date,
-                    //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
-                    //     'WORKITEMNAME' => $faker->word,
-                    //     'CREATED_BY' => $faker->name,
-                    //     'CREATED_ON' => $faker->dateTimeBetween('-2 years', 'now')->format('Y-m-d H:i:s'),
-                    //     'MESSAGE' => $faker->sentence,
-                    //     'IS_DELETE' => $faker->boolean,
-                    //     'COLLATERAL_ID' => $COLLATERALID,
-                    //     'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
-                    //     'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
-                    //     'CCY_NOMINAL' => $faker->randomElement(['USD', 'IDR', 'EUR', 'GBP']),
-                    //     'COLLATERAL_VALUE' => $faker->numberBetween(100000, 10000000),
-                    // ]);
+                    DB::table('LMSRETAIL_CMS_M_OTHERCOLLATERALDETAILS')->insert([
+                        'MAPID' => $MAPID,
+                        'COLLATERAL_ISSUER' => $faker->company,
+                        'COLLATERAL_RATING_AGENCY' => $faker->randomElement(['Moody\'s', 'S&P', 'Fitch Ratings']),
+                        'COLLATERAL_RATING_TYPE' => $faker->randomElement(['Long Term', 'Short Term', 'Subordinated']),
+                        'COLLATERAL_ISSUER_RATING' => $faker->randomElement(['AA', 'A+', 'BB', 'B-', 'CC']),
+                        'COLLATERAL_RATING_DATE' => $faker->date,
+                        'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
+                        'WORKITEMNAME' => $faker->word,
+                        'CREATED_BY' => $faker->name,
+                        'CREATED_ON' => $faker->dateTimeBetween('-2 years', 'now')->format('Y-m-d H:i:s'),
+                        'MESSAGE' => $faker->sentence,
+                        'IS_DELETE' => $faker->boolean,
+                        'COLLATERAL_ID' => $COLLATERALID,
+                        'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
+                        'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
+                        'CCY_NOMINAL' => $faker->randomElement(['USD', 'IDR', 'EUR', 'GBP']),
+                        'COLLATERAL_VALUE' => $faker->numberBetween(100000, 10000000),
+                    ]);
 
                     break;
                 case 10:
@@ -726,21 +726,21 @@ class AutomationGenerator extends Seeder
                     $BRAND = $BRANDS[array_rand($BRANDS)];
                     $MODELTYPE = $MODELTYPES[$BRAND][array_rand($MODELTYPES[$BRAND])];
 
-                    // DB::table('LMSRETAIL_CMS_M_AIRCRAFTCOLLATERALDETAILS')->insert([
-                    //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
-                    //     'MAPID' => $MAPID,
-                    //     'COLLATERAL_ID' => $COLLATERALID,
-                    //     'CERTIFICATE_OF_REGISTRATION' => $faker->bothify('CERT-####-####'),
-                    //     'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
-                    //     'BILL_OF_SALE_NUMBER' => $faker->numerify('BOS-#####'),
-                    //     'BILL_OF_SALE_DATE' => $faker->dateTimeBetween('-10 years', 'now')->format('Y-m-d'),
-                    //     'MANUFACTURE_DATE' => $faker->dateTimeBetween('-20 years', '-10 years')->format('Y-m-d'),
-                    //     'DESCRIPTION' => $faker->sentence,
-                    //     'AIRCRAFT_TYPE' => $faker->randomElement(['Helicopter', 'Jet', 'Commercial Airplane', 'Cargo Airplane']),
-                    //     'AIRCRAFT_SERIAL_NUMBER' => $faker->bothify('SN-###-####'),
-                    //     'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
-                    //     'IS_DELETE' => 'N',
-                    // ]);
+                    DB::table('LMSRETAIL_CMS_M_AIRCRAFTCOLLATERALDETAILS')->insert([
+                        'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
+                        'MAPID' => $MAPID,
+                        'COLLATERAL_ID' => $COLLATERALID,
+                        'CERTIFICATE_OF_REGISTRATION' => $faker->bothify('CERT-####-####'),
+                        'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
+                        'BILL_OF_SALE_NUMBER' => $faker->numerify('BOS-#####'),
+                        'BILL_OF_SALE_DATE' => $faker->dateTimeBetween('-10 years', 'now')->format('Y-m-d'),
+                        'MANUFACTURE_DATE' => $faker->dateTimeBetween('-20 years', '-10 years')->format('Y-m-d'),
+                        'DESCRIPTION' => $faker->sentence,
+                        'AIRCRAFT_TYPE' => $faker->randomElement(['Helicopter', 'Jet', 'Commercial Airplane', 'Cargo Airplane']),
+                        'AIRCRAFT_SERIAL_NUMBER' => $faker->bothify('SN-###-####'),
+                        'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
+                        'IS_DELETE' => 'N',
+                    ]);
 
                     break;
                 case 12:
@@ -774,57 +774,63 @@ class AutomationGenerator extends Seeder
                     $MODELTYPE = $MODELTYPES[$BRAND][array_rand($MODELTYPES[$BRAND])];
 
 
-                    // DB::table('LMSRETAIL_CMS_M_SHIPCOLLATERALDETAILS')->insert([
-                    //     'COLLATERAL_ID' => $COLLATERALID,
-                    //     'MAPID' => $MAPID,
-                    //     'ID_COMPARISON_1' => null,
-                    //     'ID_COMPARISON_2' => null,
-                    //     'ID_COMPARISON_3' => null,
-                    //     'TYPE_OF_SHIP' => $faker->numberBetween(1, 21),
-                    //     'SHIP_NAME' => $MODELTYPE . ' Ship',
-                    //     'OWNERS_NAME' => $faker->name,
-                    //     'BRAND_OF_PROPULSION_ENGINE' => $BRAND,
-                    //     'NUMBER_OF_PROPULSION_ENGINES' => $faker->numberBetween(1, 4),
-                    //     'PROPULSION_ENGINE_POWER' => $faker->numberBetween(500, 5000),
-                    //     'LENGTH' => $faker->randomFloat(2, 50, 300) . ' m',
-                    //     'WIDTH' => $faker->randomFloat(2, 10, 50) . ' m',
-                    //     'DEPTH' => $faker->randomFloat(2, 5, 20) . ' m',
-                    //     'LENGTH_OVER_ALL_LOA' => $faker->randomFloat(2, 55, 310) . ' m',
-                    //     'GROSS_TONNAGE' => $faker->numberBetween(100, 100000),
-                    //     'NET_TONNAGE' => $faker->numberBetween(50, 80000),
-                    //     'HULL_IDENTIFICATION_NUMBER' => $faker->bothify('HULL-#######'),
-                    //     'CITY_OF_MANUFACTURE' => $address['CITY'],
-                    //     'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
-                    //     'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
-                    //     'SHIPS_FLAG_COUNTRY' => $faker->country,
-                    //     'CONCLUSION_OF_ANALYSIS_RESULTS' => $faker->sentence,
-                    //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
-                    //     'COLLATERAL_STATUS' => $faker->numberBetween(1, 3),
-                    //     'COLLATERAL_CLASIFICATION' => $faker->numberBetween(1, 2),
-                    //     'COLLATERAL_TYPE' => $JENISAGUNAN['JENIS_AGUNAN'],
-                    //     'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
-                    //     'COLLATERAL_FACTOR' => $faker->randomElement(['High', 'Medium', 'Low']),
-                    //     'COLLATERAL_OWNERSHIP_STATUS' => $faker->numberBetween(1, 12),
-                    //     'COLLATERAL_DOCUMENT_NUMBER' => $faker->numerify('DOC-######'),
-                    //     'COLLATERAL_DOCUMENT_DATE' => $faker->date('Y-m-d'),
-                    //     'COLLATERAL_DOCUMENT_EXPIRY_DATE' => $faker->date('Y-m-d', '+5 years'),
-                    //     'UPLOAD_COLLATERAL_DOCUMENT' => $faker->imageUrl(),
-                    //     'CIF' => $CIF,
-                    //     'YEAR_OF_MANUFACTURE' => $faker->date(),
-                    //     'WORKITEMNANE' => $faker->word,
-                    //     'CREATED_BY' => $faker->name,
-                    //     'CREATED_ON' => $faker->dateTimeThisYear->format('Y-m-d H:i:s'),
-                    //     'MESSAGE' => $faker->sentence,
-                    //     'IS_DELETE' => 'N',
-                    // ]);
+                    DB::table('LMSRETAIL_CMS_M_SHIPCOLLATERALDETAILS')->insert([
+                        'COLLATERAL_ID' => $COLLATERALID,
+                        'MAPID' => $MAPID,
+                        'ID_COMPARISON_1' => null,
+                        'ID_COMPARISON_2' => null,
+                        'ID_COMPARISON_3' => null,
+                        'TYPE_OF_SHIP' => $faker->numberBetween(1, 21),
+                        'SHIP_NAME' => $MODELTYPE . ' Ship',
+                        'OWNERS_NAME' => $faker->name,
+                        'BRAND_OF_PROPULSION_ENGINE' => $BRAND,
+                        'NUMBER_OF_PROPULSION_ENGINES' => $faker->numberBetween(1, 4),
+                        'PROPULSION_ENGINE_POWER' => $faker->numberBetween(500, 5000),
+                        'LENGTH' => $faker->randomFloat(2, 50, 300) . ' m',
+                        'WIDTH' => $faker->randomFloat(2, 10, 50) . ' m',
+                        'DEPTH' => $faker->randomFloat(2, 5, 20) . ' m',
+                        'LENGTH_OVER_ALL_LOA' => $faker->randomFloat(2, 55, 310) . ' m',
+                        'GROSS_TONNAGE' => $faker->numberBetween(100, 100000),
+                        'NET_TONNAGE' => $faker->numberBetween(50, 80000),
+                        'HULL_IDENTIFICATION_NUMBER' => $faker->bothify('HULL-#######'),
+                        'CITY_OF_MANUFACTURE' => $address['CITY'],
+                        'UPLOAD_COLLATERAL_PHOTO' => $faker->imageUrl(),
+                        'COLLATERAL_CONDITION' => $faker->numberBetween(1, 5),
+                        'SHIPS_FLAG_COUNTRY' => $faker->country,
+                        'CONCLUSION_OF_ANALYSIS_RESULTS' => $faker->sentence,
+                        'INSERTIONORDERID' => $faker->unique()->numberBetween(1000000, 100000000),
+                        'COLLATERAL_STATUS' => $faker->numberBetween(1, 3),
+                        'COLLATERAL_CLASIFICATION' => $faker->numberBetween(1, 2),
+                        'COLLATERAL_TYPE' => $JENISAGUNAN['JENIS_AGUNAN'],
+                        'COLLATERAL_FORM_TYPE' => $JENISAGUNAN['JENIS_BENTUK_AGUNAN'],
+                        'COLLATERAL_FACTOR' => $faker->randomElement(['High', 'Medium', 'Low']),
+                        'COLLATERAL_OWNERSHIP_STATUS' => $faker->numberBetween(1, 12),
+                        'COLLATERAL_DOCUMENT_NUMBER' => $faker->numerify('DOC-######'),
+                        'COLLATERAL_DOCUMENT_DATE' => $faker->date('Y-m-d'),
+                        'COLLATERAL_DOCUMENT_EXPIRY_DATE' => $faker->date('Y-m-d', '+5 years'),
+                        'UPLOAD_COLLATERAL_DOCUMENT' => $faker->imageUrl(),
+                        'CIF' => $CIF,
+                        'YEAR_OF_MANUFACTURE' => $faker->date(),
+                        'WORKITEMNANE' => $faker->word,
+                        'CREATED_BY' => $faker->name,
+                        'CREATED_ON' => $faker->dateTimeThisYear->format('Y-m-d H:i:s'),
+                        'MESSAGE' => $faker->sentence,
+                        'IS_DELETE' => 'N',
+                    ]);
 
                     break;
                 default:
                     break;
             }
 
-            // $PERUSAHAANASURANSIES = DB::table('LMSRETAIL_CMS_M_REKANANASURANSI')->select('NAMA_ASURANSI')->get();
-            // $PERUSAHAANASURANSI = $PERUSAHAANASURANSIES->random()->nama_asuransi;
+            $PERUSAHAANASURANSIES = DB::table('LMSRETAIL_CMS_M_REKANANASURANSI')->select('NAMA_ASURANSI')->get();
+
+            if ($PERUSAHAANASURANSIES->isEmpty()) {
+                $this->command->info("🤖 \033[31mPERUSAHAAN ASURANSI NOT FOUND\033[32m 🚀");
+                return;
+            }
+
+            $PERUSAHAANASURANSI = $PERUSAHAANASURANSIES?->random()->nama_asuransi;
 
             $INSURANCE_PREMIUM_AMOUNT = $faker->randomFloat(2, 100, 10000);
             $REBATE = $faker->randomFloat(2, 0, 5);
@@ -832,35 +838,35 @@ class AutomationGenerator extends Seeder
 
 
             // Feeding Insurance
-            // DB::table('LMSRETAIL_CMS_M_INSURANCE')->insert([
-            //     'ID' => $faker->unique()->numberBetween(1000, 9999),
-            //     'INSURANCE_COVERAGE_STATUS' => $faker->numberBetween(1, 2),
-            //     'TYPE_OF_INSURANCE' => $faker->numberBetween(1, 4),
-            //     'INSURER_NAME' => $PERUSAHAANASURANSI,
-            //     'INSURER_STATUS' => $faker->numberBetween(1, 2),
-            //     'INSURANCE_CURRENCY' => $faker->numberBetween(1, 2),
-            //     'INSURANCE_COVERAGE_AMOUNT' => $faker->randomFloat(2, 1000, 1000000),
-            //     'INSURANCE_POLICY_NUMBER' => $faker->bothify('####-???-###'),
-            //     'INSURANCE_POLICY_DATE' => $faker->date(),
-            //     'INSURANCE_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+2 years')->format('Y-m-d'),
-            //     'BANKERS_CLAUSE_STATUS' => $faker->numberBetween(1, 2),
-            //     'UPLOAD_INSURANCE_DOCUMENT' => $faker->fileExtension,
-            //     'INSURANCE_COVERAGE_CONFIRMATION' => $faker->numberBetween(1, 2),
-            //     'INSURANCE_ORDER_DATE' => $faker->date(),
-            //     'INSURANCE_PREMIUM_AMOUNT' => $INSURANCE_PREMIUM_AMOUNT,
-            //     'INSURANCE_ADMINISTRATION_FEE' => $faker->randomFloat(2, 10, 500),
-            //     'REBATE' => $REBATE,
-            //     'SERVICE_FEE_AMOUNT' => $SERVICE_FEE_AMOUNT,
-            //     'INSURANCE_STATUS' => $faker->numberBetween(1, 3),
-            //     'COLLATERAL_ID' => $COLLATERALID,
-            //     'MAPID' => $MAPID,
-            //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000, 999999999),
-            //     'WORKITEMNAME' => $faker->word,
-            //     'CREATEDBY' => $faker->name,
-            //     'CREATEDON' => $faker->dateTime()->format('Y-m-d H:i:s'),
-            //     'MESSAGE' => $faker->sentence,
-            //     'IS_DELETE' => 'N',
-            // ]);
+            DB::table('LMSRETAIL_CMS_M_INSURANCE')->insert([
+                'ID' => $faker->unique()->numberBetween(1000, 9999),
+                'INSURANCE_COVERAGE_STATUS' => $faker->numberBetween(1, 2),
+                'TYPE_OF_INSURANCE' => $faker->numberBetween(1, 4),
+                'INSURER_NAME' => $PERUSAHAANASURANSI,
+                'INSURER_STATUS' => $faker->numberBetween(1, 2),
+                'INSURANCE_CURRENCY' => $faker->numberBetween(1, 2),
+                'INSURANCE_COVERAGE_AMOUNT' => $faker->randomFloat(2, 1000, 1000000),
+                'INSURANCE_POLICY_NUMBER' => $faker->bothify('####-???-###'),
+                'INSURANCE_POLICY_DATE' => $faker->date(),
+                'INSURANCE_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+2 years')->format('Y-m-d'),
+                'BANKERS_CLAUSE_STATUS' => $faker->numberBetween(1, 2),
+                'UPLOAD_INSURANCE_DOCUMENT' => $faker->fileExtension,
+                'INSURANCE_COVERAGE_CONFIRMATION' => $faker->numberBetween(1, 2),
+                'INSURANCE_ORDER_DATE' => $faker->date(),
+                'INSURANCE_PREMIUM_AMOUNT' => $INSURANCE_PREMIUM_AMOUNT,
+                'INSURANCE_ADMINISTRATION_FEE' => $faker->randomFloat(2, 10, 500),
+                'REBATE' => $REBATE,
+                'SERVICE_FEE_AMOUNT' => $SERVICE_FEE_AMOUNT,
+                'INSURANCE_STATUS' => $faker->numberBetween(1, 3),
+                'COLLATERAL_ID' => $COLLATERALID,
+                'MAPID' => $MAPID,
+                'INSERTIONORDERID' => $faker->unique()->numberBetween(1000, 999999999),
+                'WORKITEMNAME' => $faker->word,
+                'CREATEDBY' => $faker->name,
+                'CREATEDON' => $faker->dateTime()->format('Y-m-d H:i:s'),
+                'MESSAGE' => $faker->sentence,
+                'IS_DELETE' => 'N',
+            ]);
 
 
             $JENISPENGIKATANS = [
@@ -935,112 +941,125 @@ class AutomationGenerator extends Seeder
                     $JENISAGUNAN = $JENISPENGIKATANS[4];
             }
 
-            // $PERUSAHAANNOTARIES = DB::table('LMSRETAIL_CMS_M_REKANANNOTARIS')->select('NOTARIS_PPAT')->get();
-            // $PERUSAHAANNOTARIS = $PERUSAHAANNOTARIES->random();
+            $PERUSAHAANNOTARIES = DB::table('LMSRETAIL_CMS_M_REKANANNOTARIS')->select('NOTARIS_PPAT')->get();
+            if ($PERUSAHAANNOTARIES->isEmpty()) {
+                $this->command->info("🤖 \033[31mPERUSAHAAN NOTARIS NOT FOUND\033[32m 🚀");
+                return;
+            }
+            $PERUSAHAANNOTARIS = $PERUSAHAANNOTARIES->random();
 
             // Feeding Notary
-            // DB::table('LMSRETAIL_CMS_M_NOTARYPROCESS')->insert([
-            //     'MAPID' => $MAPID,
-            //     'COLLATERAL_ID' => $COLLATERALID,
-            //     'COLLATERAL_BINDING_TYPE' => $JENISPENGIKATAN['JENIS_PENGIKATAN_AGUNAN'],
-            //     'BINDING_DOCUMENT_TYPE' => $JENISPENGIKATAN['JENIS_DOK_PENGIKATAN_AGUNAN'],
-            //     'BINDING_COVER_NOTE_NUMBER' => $faker->bothify('DOC-####-??##'),
-            //     'BINDING_COVER_NOTE_DATE' => $faker->date(),
-            //     'BINDING_COVER_NOTE_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+2 years')->format('Y-m-d'),
-            //     'NOTARY_NAME' => $PERUSAHAANNOTARIS->notaris_ppat,
-            //     'DOCUMENT_CERTIFICATE_NUMBER_OF_BINDING' => $faker->bothify('BIND-CERT-??##'),
-            //     'BINDING_DOCUMENT_DATE' => $faker->date(),
-            //     'BINDING_STATUS' => $faker->numberBetween(1, 3),
-            //     'BINDING_CURRENCY' => '1',
-            //     'BINDING_AMOUNT' => $faker->randomFloat(2, 1000, 1000000),
-            //     'COLLATERAL_CONTROL' => $faker->numberBetween(1, 2),
-            //     'BINDING_RANK' => $faker->numberBetween(1, 10),
-            //     'UPLOAD_NOTARY_DOCUMENT' => $faker->fileExtension,
-            //     'PROCESSING_OR_BINDING_ORDER_DATE' => $faker->date(),
-            //     'NOTARY_PROCESS_SLA' => $faker->numberBetween(1, 30),
-            //     'ISSUE_CATEGORY' => $faker->numberBetween(1, 5),
-            //     'ISSUE_SUBCATEGORY' => $faker->numberBetween(1, 5),
-            //     'OWNERSHIP_EVIDENCE_COVER_NOTE_NUMBER' => $faker->bothify('OWN-CERT-##-??##'),
-            //     'OWNERSHIP_EVIDENCE_COVER_NOTE_DATE' => $faker->date(),
-            //     'PROCESSING_OR_OWNERSHIP_EVIDENCE_ORDER_DATE' => $faker->date(),
-            //     'OWNERSHIP_EVIDENCE_COVER_NOTE_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+2 years')->format('Y-m-d'),
-            //     'NOTARY_NAME_FOR_OWNERSHIP_EVIDENCE' => $faker->name,
-            //     'PRODUCT_ID' => $faker->numberBetween(1, 4),
-            //     'PERCENT_PENGIKATAN' => $faker->randomFloat(2, 0, 100),
-            //     'VALUE_PENGIKATAN' => $faker->randomFloat(2, 1000, 1000000),
-            //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000, 9999999),
-            //     'WORKITEMNAME' => $faker->word,
-            //     'CREATEDBY' => $faker->name,
-            //     'CREATEDON' => $faker->dateTime()->format('Y-m-d H:i:s'),
-            //     'MESSAGE' => $faker->sentence,
-            //     'IS_DELETE' => 'N',
-            // ]);
+            DB::table('LMSRETAIL_CMS_M_NOTARYPROCESS')->insert([
+                'MAPID' => $MAPID,
+                'COLLATERAL_ID' => $COLLATERALID,
+                'COLLATERAL_BINDING_TYPE' => $JENISPENGIKATAN['JENIS_PENGIKATAN_AGUNAN'],
+                'BINDING_DOCUMENT_TYPE' => $JENISPENGIKATAN['JENIS_DOK_PENGIKATAN_AGUNAN'],
+                'BINDING_COVER_NOTE_NUMBER' => $faker->bothify('DOC-####-??##'),
+                'BINDING_COVER_NOTE_DATE' => $faker->date(),
+                'BINDING_COVER_NOTE_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+2 years')->format('Y-m-d'),
+                'NOTARY_NAME' => $PERUSAHAANNOTARIS->notaris_ppat,
+                'DOCUMENT_CERTIFICATE_NUMBER_OF_BINDING' => $faker->bothify('BIND-CERT-??##'),
+                'BINDING_DOCUMENT_DATE' => $faker->date(),
+                'BINDING_STATUS' => $faker->numberBetween(1, 3),
+                'BINDING_CURRENCY' => '1',
+                'BINDING_AMOUNT' => $faker->randomFloat(2, 1000, 1000000),
+                'COLLATERAL_CONTROL' => $faker->numberBetween(1, 2),
+                'BINDING_RANK' => $faker->numberBetween(1, 10),
+                'UPLOAD_NOTARY_DOCUMENT' => $faker->fileExtension,
+                'PROCESSING_OR_BINDING_ORDER_DATE' => $faker->date(),
+                'NOTARY_PROCESS_SLA' => $faker->numberBetween(1, 30),
+                'ISSUE_CATEGORY' => $faker->numberBetween(1, 5),
+                'ISSUE_SUBCATEGORY' => $faker->numberBetween(1, 5),
+                'OWNERSHIP_EVIDENCE_COVER_NOTE_NUMBER' => $faker->bothify('OWN-CERT-##-??##'),
+                'OWNERSHIP_EVIDENCE_COVER_NOTE_DATE' => $faker->date(),
+                'PROCESSING_OR_OWNERSHIP_EVIDENCE_ORDER_DATE' => $faker->date(),
+                'OWNERSHIP_EVIDENCE_COVER_NOTE_EXPIRY_DATE' => $faker->dateTimeBetween('now', '+2 years')->format('Y-m-d'),
+                'NOTARY_NAME_FOR_OWNERSHIP_EVIDENCE' => $faker->name,
+                'PRODUCT_ID' => $faker->numberBetween(1, 4),
+                'PERCENT_PENGIKATAN' => $faker->randomFloat(2, 0, 100),
+                'VALUE_PENGIKATAN' => $faker->randomFloat(2, 1000, 1000000),
+                'INSERTIONORDERID' => $faker->unique()->numberBetween(1000, 9999999),
+                'WORKITEMNAME' => $faker->word,
+                'CREATEDBY' => $faker->name,
+                'CREATEDON' => $faker->dateTime()->format('Y-m-d H:i:s'),
+                'MESSAGE' => $faker->sentence,
+                'IS_DELETE' => 'N',
+            ]);
 
 
             $GENERALAPRAISALID = $faker->unique()->numerify('GENAPR####');
 
-            // $KJPP = DB::table('LMSRETAIL_CMS_M_PERUSAHAANREKANAN')->get()->random();
-            // $SURVEYOR1 = DB::table('LMSRETAIL_CMS_M_PERSONILPERUSAHAANREKANAN')
-            //     ->where('ID_PERUSAHAAN', $KJPP->id)
-            //     ->get()
-            //     ->random();
-            // $SURVEYOR2 = DB::table('LMSRETAIL_CMS_M_PERSONILPERUSAHAANREKANAN')
-            //     ->where('ID_PERUSAHAAN', $KJPP->id)
-            //     ->get()
-            //     ->random();
+
+
+            $KJPP = DB::table('LMSRETAIL_CMS_M_PERUSAHAANREKANAN')->get()->random();
+            $SURVEYOR1 = DB::table('LMSRETAIL_CMS_M_PERSONILPERUSAHAANREKANAN')
+                ->where('ID_PERUSAHAAN', $KJPP->id)
+                ->get();
+            $SURVEYOR2 = DB::table('LMSRETAIL_CMS_M_PERSONILPERUSAHAANREKANAN')
+                ->where('ID_PERUSAHAAN', $KJPP->id)
+                ->get();
+
+            if ($SURVEYOR2->isEmpty() || $SURVEYOR1->isEmpty()) {
+                $SURVEYOR1 = $faker->name();
+                $SURVEYOR2 = $faker->name();
+            } else {
+                $SURVEYOR1 = $SURVEYOR1->random()->pemimpin_rekan_atau_rekan;
+                $SURVEYOR2 = $SURVEYOR2->random()->pemimpin_rekan_atau_rekan;
+            }
+
 
             // // Taksasi General
-            // DB::table('LMSRETAIL_CMS_M_GENERALAPPRAISALINFORMATION')->insert([
-            //     'MAPID' => $MAPID,
-            //     'VALUATION_PURPOSE' => $faker->numberBetween(1, 2),
-            //     'VALUATION_APPROACH' => $faker->numberBetween(1, 3),
-            //     'VALUER_SURVEYOR_NAME_1' => substr($SURVEYOR1->pemimpin_rekan_atau_rekan, 0, 50),
-            //     'SURVEYOR_POSITION_1' => 'Pemimpin Rekan atau Rekan',
-            //     'VALUER_SURVEYOR_NAME_2' => substr($SURVEYOR2->pemimpin_rekan_atau_rekan, 0, 50),
-            //     'SURVEYOR_POSITION_2' => 'Pemimpin Rekan atau Rekan',
-            //     'KJPP_NAME' => substr($KJPP->nama_perusahaan, 0, 50),
-            //     'KJPP_ADDRESS' => $faker->address,
-            //     'VALUATION_DATE' => $faker->date(),
-            //     'VALUATION_YEAR' => $faker->date(),
-            //     'VALUATION_REVIEW_EXPIRY_DATE' => $faker->date(),
-            //     'KJPP_BRANCH' => $faker->city(),
-            //     'KJPP_EMAIL' => $faker->companyEmail(),
-            //     'VALUER_SURVEYOR_EMAIL_1' => $faker->email(),
-            //     'VALUER_SURVEYOR_PHONE_NUMBER_1' => $faker->phoneNumber(),
-            //     'VALUER_SURVEYOR_2_EMAIL' => $faker->email(),
-            //     'VALUER_SURVEYOR_PHONE_NUMBER_2' => $faker->phoneNumber(),
-            //     'WORKITEMNAME' => $faker->sentence(2),
-            //     'CREATED_BY' => $faker->name(),
-            //     'CREATED_ON' => $faker->dateTime(),
-            //     'MESSAGE' => $faker->sentence(),
-            //     'IS_DELETE' => 'N',
-            //     'COLLATERAL_ID' => $COLLATERALID
-            // ]);
+            DB::table('LMSRETAIL_CMS_M_GENERALAPPRAISALINFORMATION')->insert([
+                'MAPID' => $MAPID,
+                'VALUATION_PURPOSE' => $faker->numberBetween(1, 2),
+                'VALUATION_APPROACH' => $faker->numberBetween(1, 3),
+                'VALUER_SURVEYOR_NAME_1' => substr($SURVEYOR1, 0, 50),
+                'SURVEYOR_POSITION_1' => 'Pemimpin Rekan atau Rekan',
+                'VALUER_SURVEYOR_NAME_2' => substr($SURVEYOR2, 0, 50),
+                'SURVEYOR_POSITION_2' => 'Pemimpin Rekan atau Rekan',
+                'KJPP_NAME' => substr($KJPP->nama_perusahaan, 0, 50),
+                'KJPP_ADDRESS' => $faker->address,
+                'VALUATION_DATE' => $faker->date(),
+                'VALUATION_YEAR' => $faker->date(),
+                'VALUATION_REVIEW_EXPIRY_DATE' => $faker->date(),
+                'KJPP_BRANCH' => $faker->city(),
+                'KJPP_EMAIL' => $faker->companyEmail(),
+                'VALUER_SURVEYOR_EMAIL_1' => $faker->email(),
+                'VALUER_SURVEYOR_PHONE_NUMBER_1' => $faker->phoneNumber(),
+                'VALUER_SURVEYOR_2_EMAIL' => $faker->email(),
+                'VALUER_SURVEYOR_PHONE_NUMBER_2' => $faker->phoneNumber(),
+                'WORKITEMNAME' => $faker->sentence(2),
+                'CREATED_BY' => $faker->name(),
+                'CREATED_ON' => $faker->dateTime(),
+                'MESSAGE' => $faker->sentence(),
+                'IS_DELETE' => 'N',
+                'COLLATERAL_ID' => $COLLATERALID
+            ]);
 
             // Detail Taksasi
-            // DB::table('LMSRETAIL_CMS_M_APPRAISALRESULT')->insert([
-            //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1, 9999999999),
-            //     'MAPID' => $MAPID,
-            //     'BANK_VALUATION_VALUE' => $faker->randomFloat(2, 10000, 1000000),
-            //     'KJPP_VALUATION_VALUE' => $faker->randomFloat(2, 10000, 1000000),
-            //     'MARKET_OFFER_VALUE' => $faker->randomFloat(2, 10000, 1000000),
-            //     'LIQUIDATION_VALUE' => $faker->randomFloat(2, 10000, 1000000),
-            //     'IS_DELETE' => 'N',
-            //     'COLLATERAL_SUITABILITY' => $faker->randomElement(['Suitable', 'Not Suitable', 'Pending']),
-            //     'COLLATERAL_ID' => $COLLATERALID,
-            //     'GENAPR_ID' => $GENERALAPRAISALID
-            // ]);
+            DB::table('LMSRETAIL_CMS_M_APPRAISALRESULT')->insert([
+                'INSERTIONORDERID' => $faker->unique()->numberBetween(1, 9999999999),
+                'MAPID' => $MAPID,
+                'BANK_VALUATION_VALUE' => $faker->randomFloat(2, 10000, 1000000),
+                'KJPP_VALUATION_VALUE' => $faker->randomFloat(2, 10000, 1000000),
+                'MARKET_OFFER_VALUE' => $faker->randomFloat(2, 10000, 1000000),
+                'LIQUIDATION_VALUE' => $faker->randomFloat(2, 10000, 1000000),
+                'IS_DELETE' => 'N',
+                'COLLATERAL_SUITABILITY' => $faker->randomElement(['Suitable', 'Not Suitable', 'Pending']),
+                'COLLATERAL_ID' => $COLLATERALID,
+                'GENAPR_ID' => $GENERALAPRAISALID
+            ]);
 
             // Link Age
-            // DB::table('LMSRETAIL_CMS_M_COLLATERALLINKAGE')->insert([
-            //     'ID' => $faker->unique()->numberBetween(1000, 9999999),
-            //     'COLLATERAL_ID' => $COLLATERALID,
-            //     'LOAN_ACCOUNT_NUMBER' => $faker->numerify('LN######'), // Example format: LN123456
-            //     'BINDING_ALLOCATION_FORM' => $faker->randomElement(['Full Collateral Allocation', 'Partial Collateral Allocation', 'Cross Collateral Allocation', 'Joint Collateral Allocation', 'Shared Collateral Allocation', 'Reserve Collateral Allocation', 'Contingency Collateral Allocation', 'Specific Collateral Allocation', 'Composite Collateral Allocation', 'Proportional Collateral Allocation']),
-            //     'BINDING_ALLOCATION_VALUE' => $faker->randomFloat(2, 1000, 100000),
-            //     'COLLATERAL_LINK_STATUS' => $faker->randomElement(['Active', 'inactive']),
-            //     'IS_DELETE' => 'N',
-            // ]);
+            DB::table('LMSRETAIL_CMS_M_COLLATERALLINKAGE')->insert([
+                'ID' => $faker->unique()->numberBetween(1000, 9999999),
+                'COLLATERAL_ID' => $COLLATERALID,
+                'LOAN_ACCOUNT_NUMBER' => $faker->numerify('LN######'), // Example format: LN123456
+                'BINDING_ALLOCATION_FORM' => $faker->randomElement(['Full Collateral Allocation', 'Partial Collateral Allocation', 'Cross Collateral Allocation', 'Joint Collateral Allocation', 'Shared Collateral Allocation', 'Reserve Collateral Allocation', 'Contingency Collateral Allocation', 'Specific Collateral Allocation', 'Composite Collateral Allocation', 'Proportional Collateral Allocation']),
+                'BINDING_ALLOCATION_VALUE' => $faker->randomFloat(2, 1000, 100000),
+                'COLLATERAL_LINK_STATUS' => $faker->randomElement(['Active', 'inactive']),
+                'IS_DELETE' => 'N',
+            ]);
 
             // Link Age Array
             // DB::table('LMSRETAIL_CMS_M_COLLATERALLINKAGEARRAY')->insert([
@@ -1065,17 +1084,17 @@ class AutomationGenerator extends Seeder
             // ]);
 
             // Keputusan
-            // DB::table('LMSRETAIL_CMS_T_HISTORYMAINTENANCES')->insert([
-            //     'INSERTIONORDERID' => $faker->unique()->numberBetween(1000, 9999999),
-            //     'MAPID' => $MAPID,
-            //     'ID' => $faker->unique()->numberBetween(1000, 9999999),
-            //     'FIELD_NAME' => $faker->randomElement(['COLLATERAL_BINDING_TYPE', 'BINDING_DOCUMENT_TYPE', 'BINDING_COVER_NOTE_NUMBER', 'BINDING_COVER_NOTE_DATE', 'BINDING_COVER_NOTE_EXPIRY_DATE', 'NOTARY_NAME', 'DOCUMENT_CERTIFICATE_NUMBER_OF_BINDING', 'BINDING_DOCUMENT_DATE', 'BINDING_STATUS', 'BINDING_CURRENCY', 'BINDING_AMOUNT', 'COLLATERAL_CONTROL', 'BINDING_RANK', 'UPLOAD_NOTARY_DOCUMENT', 'PROCESSING_OR_BINDING_ORDER_DATE', 'NOTARY_PROCESS_SLA', 'ISSUE_CATEGORY', 'ISSUE_SUBCATEGORY', 'OWNERSHIP_EVIDENCE_COVER_NOTE_NUMBER', 'OWNERSHIP_EVIDENCE_COVER_NOTE_DATE', 'PROCESSING_OR_OWNERSHIP_EVIDENCE_ORDER_DATE', 'OWNERSHIP_EVIDENCE_COVER_NOTE_EXPIRY_DATE', 'NOTARY_NAME_FOR_OWNERSHIP_EVIDENCE', 'PRODUCT_ID', 'PERCENT_PENGIKATAN', 'VALUE_PENGIKATAN']),
-            //     'FIELD_ID' => $faker->randomNumber(),
-            //     'PREVIOUS_VALUE' => $faker->word,
-            //     'UPDATED_VALUE' => $faker->word,
-            //     'UPDATED_BY' => $faker->name,
-            //     'DATETIME' => $faker->dateTimeBetween('-1 years', 'now')->format('Y-m-d H:i:s'),
-            // ]);
+            DB::table('LMSRETAIL_CMS_T_HISTORYMAINTENANCES')->insert([
+                'INSERTIONORDERID' => $faker->unique()->numberBetween(1000, 9999999),
+                'MAPID' => $MAPID,
+                'ID' => $faker->unique()->numberBetween(1000, 9999999),
+                'FIELD_NAME' => $faker->randomElement(['COLLATERAL_BINDING_TYPE', 'BINDING_DOCUMENT_TYPE', 'BINDING_COVER_NOTE_NUMBER', 'BINDING_COVER_NOTE_DATE', 'BINDING_COVER_NOTE_EXPIRY_DATE', 'NOTARY_NAME', 'DOCUMENT_CERTIFICATE_NUMBER_OF_BINDING', 'BINDING_DOCUMENT_DATE', 'BINDING_STATUS', 'BINDING_CURRENCY', 'BINDING_AMOUNT', 'COLLATERAL_CONTROL', 'BINDING_RANK', 'UPLOAD_NOTARY_DOCUMENT', 'PROCESSING_OR_BINDING_ORDER_DATE', 'NOTARY_PROCESS_SLA', 'ISSUE_CATEGORY', 'ISSUE_SUBCATEGORY', 'OWNERSHIP_EVIDENCE_COVER_NOTE_NUMBER', 'OWNERSHIP_EVIDENCE_COVER_NOTE_DATE', 'PROCESSING_OR_OWNERSHIP_EVIDENCE_ORDER_DATE', 'OWNERSHIP_EVIDENCE_COVER_NOTE_EXPIRY_DATE', 'NOTARY_NAME_FOR_OWNERSHIP_EVIDENCE', 'PRODUCT_ID', 'PERCENT_PENGIKATAN', 'VALUE_PENGIKATAN']),
+                'FIELD_ID' => $faker->randomNumber(),
+                'PREVIOUS_VALUE' => $faker->word,
+                'UPDATED_VALUE' => $faker->word,
+                'UPDATED_BY' => $faker->name,
+                'DATETIME' => $faker->dateTimeBetween('-1 years', 'now')->format('Y-m-d H:i:s'),
+            ]);
 
             $endTime = microtime(true);
             $executionTime = $endTime - $startTime;
